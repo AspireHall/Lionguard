@@ -1,7 +1,8 @@
+import "../Pages.css";
 const ContactPage = () => {
   return (
-    <div>
-      <div>Contact Page</div>
+    <div className="mainContainer">
+      <div className="font">Contact</div>
     </div>
   );
 };

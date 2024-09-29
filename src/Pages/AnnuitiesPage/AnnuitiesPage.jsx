@@ -1,7 +1,8 @@
+import "../Pages.css";
 const AnnuitiesPage = () => {
   return (
-    <div>
-      <div>Annuities</div>
+    <div className="mainContainer">
+      <div className="font">Annuities</div>
     </div>
   );
 };

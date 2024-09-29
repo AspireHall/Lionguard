@@ -1,7 +1,8 @@
+import "../Pages.css";
 const AboutPage = () => {
   return (
-    <div>
-      <div>About Page</div>
+    <div className="mainContainer">
+      <div className="font">About Page</div>
     </div>
   );
 };

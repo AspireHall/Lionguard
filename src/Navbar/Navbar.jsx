@@ -44,16 +44,18 @@ const Navbar = () => {
         </Link>
       </div>
       <div className={classes.rightContainer}>
-        <a href="">
+        <a href="https://www.instagram.com/victorjamesfinancial/">
           <InstagramIcon sx={sx} />
         </a>
-        <a href="">
+        <a href="https://x.com/lionguardllc">
           <XIcon sx={sx} />
         </a>
-        <a href="">
+        <a href="https://www.facebook.com/LionGuardFinancialLLC">
           <FacebookOutlinedIcon sx={sx} />
         </a>
-        <div className={classes.bookAppBtn}>Book Appointment</div>
+        <a className={classes.a} href="https://calendly.com/lionguardfinancial">
+          <div className={classes.bookAppBtn}>Book Appointment</div>
+        </a>
       </div>
     </div>
   );

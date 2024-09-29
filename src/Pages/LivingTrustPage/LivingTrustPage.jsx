@@ -1,7 +1,8 @@
+import "../Pages.css";
 const LivingTrustPage = () => {
   return (
-    <div>
-      <div>Living Trust</div>
+    <div className="mainContainer">
+      <div className="font">Life Insurance</div>
     </div>
   );
 };

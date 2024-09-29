@@ -63,12 +63,11 @@
   align-items: center;
   background-image: linear-gradient(to bottom, #111111, #222222, #111111);
   color: white;
+  text-decoration: none;
   font-size: 16px;
   border-radius: 25px;
-  transition: transform 1s ease;
 }
 .bookAppBtn:hover {
-  transform: scale(1.02);
   cursor: pointer;
   border-color: rgb(50, 129, 226);
   border-style: solid;
@@ -76,4 +75,8 @@
   background-image: none;
   color: black;
   font-size: 16px;
+}
+
+.a {
+  text-decoration: none;
 }
