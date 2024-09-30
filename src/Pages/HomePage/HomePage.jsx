@@ -32,7 +32,7 @@ const HomePage = () => {
           <div className={classes.title}>Protect your future</div>
           <div className={classes.text}>
             Secure your family&apos;s future. see what coverage is right for
-            you...
+            you.
           </div>
           <div className={classes.espanolbtn}>Hablamos español</div>
         </div>
