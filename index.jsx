@@ -1,13 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import HomePage from "./Pages/HomePage/HomePage.jsx";
-import AboutPage from "./Pages/AboutPage/AboutPage.jsx";
-import LifeInsurancePage from "./Pages/LifeInsurancePage/LifeInsurancePage.jsx";
-import AnnuitiesPage from "./Pages/AnnuitiesPage/AnnuitiesPage.jsx";
-import LivingTrustPage from "./Pages/LivingTrustPage/LivingTrustPage.jsx";
-import ContactPage from "./Pages/ContactPage/ContactPage.jsx";
+import HomePage from "./src/Pages/HomePage/HomePage.jsx";
+import AboutPage from "./src/Pages/AboutPage/AboutPage.jsx";
+import LifeInsurancePage from "./src/Pages/LifeInsurancePage/LifeInsurancePage.jsx";
+import AnnuitiesPage from "./src/Pages/AnnuitiesPage/AnnuitiesPage.jsx";
+import LivingTrustPage from "./src/Pages/LivingTrustPage/LivingTrustPage.jsx";
+import ContactPage from "./src/Pages/ContactPage/ContactPage.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App.jsx";
+import App from "./src/App.jsx";
 
 const router = createBrowserRouter([
   {
