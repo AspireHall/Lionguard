@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     outDir: "build", // Customize this if needed
     rollupOptions: {
-      input: "./app/root.tsx", // Your Remix entry point (adjust as needed)
+      input: "./src/index.jsx", // Your Remix entry point (adjust as needed)
     },
   },
 });
