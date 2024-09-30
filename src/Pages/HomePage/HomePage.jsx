@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import GenerationImage from "../../assets/GenerationFamilyfaded.jpg";
 import "../Pages.css";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
@@ -96,7 +95,7 @@ const HomePage = () => {
             <p>
               Ready to take the first step towards securing your family&apos;s
               future? Explore our website to learn more about our services, and
-              get in touch with us to schedule a consultation
+              get in touch with us to schedule a consultation.
             </p>
             <p className={classes.learnBtn}>
               Learn More <KeyboardDoubleArrowRightIcon />
