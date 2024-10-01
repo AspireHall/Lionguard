@@ -9,5 +9,9 @@
   z-index: 100;
 }
 .navbar.scrolled {
-  background-color: rgb(5, 86, 184, 0.5);
+  background-color: rgba(4, 63, 135, 0.9);
+}
+
+.MuiMenu-paper {
+  background-color: blue;
 }
