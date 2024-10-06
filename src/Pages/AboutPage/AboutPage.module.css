@@ -1,0 +1,30 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  padding: 3%;
+}
+.leftContainer {
+  width: 55%;
+  height: 100%;
+}
+
+.rightContainer {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  max-width: 93%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.title {
+  font-family: "Lato";
+  font-size: clamp(2rem, 2vw + 0.1rem, 3rem);
+}
+.paragraph {
+  font-size: clamp(1rem, 2vw + 0.1rem, 1.4rem);
+}

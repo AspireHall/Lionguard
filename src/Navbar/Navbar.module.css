@@ -142,12 +142,15 @@
 }
 
 .bookAppBtn {
-  height: 40px;
+  height: 35px;
   width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(to bottom, #111111, #222222, #111111);
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
   color: white;
   text-decoration: none;
   font-size: clamp(0.8rem, 2vw + 0.1rem, 1rem);
@@ -157,9 +160,10 @@
   cursor: pointer;
   border-color: rgb(50, 129, 226);
   border-style: solid;
-  background-color: rgb(5, 86, 184);
+  border-width: 2px;
+  background-color: rgb(7, 96, 205);
   background-image: none;
-  color: black;
+  color: white;
 }
 
 .a {
@@ -168,7 +172,7 @@
 
 .socialsContainer {
   height: 80px;
-  width: 120px;
+  width: 150px;
   display: flex;
   align-items: center;
   justify-content: center;

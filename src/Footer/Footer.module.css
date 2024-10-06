@@ -1,13 +1,98 @@
 .mainContainer {
-  height: 80px;
+  height: 400px;
+  width: inherit;
+  padding-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../assets/LionguardFooter.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  justify-content: center;
+  align-items: center;
+}
+.secondaryContainer {
   width: 100%;
-  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.font {
+.backgroundContainer {
+  background-image: url("../assets//LionguardFooter.png");
+  position: absolute;
+  z-index: 0;
+}
+
+.leftContainer {
+  width: 33%;
+  height: inherit;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: white;
-  font-size: 50px;
+  border-right: solid 2px gray;
+}
+.middleContainer {
+  width: 33%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-left: 50px;
+  padding-right: 120px;
+  border-right: solid 2px gray;
+}
+.rightContainer {
+  width: 33%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-left: 50px;
+}
+
+.articleBtn {
+  font-family: "Lato";
+  width: 200px;
+  height: 40px;
+  color: beige;
+  background-color: black;
+  border-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.articleBtn:hover {
+  width: 200px;
+  height: 40px;
+  color: beige;
+  background-color: rgb(4, 73, 157);
+  border-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.title {
+  color: white;
+  font-size: clamp(1.5rem, 2vw + 0.01rem, 2rem);
+  z-index: 1;
+}
+.paragraph {
+  color: white;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.reserveFont {
+  width: inherit;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: clamp(0.8rem, 2vw + 0.01rem, 1rem);
 }
