@@ -1,5 +1,5 @@
 import GenerationImage from "../../assets/GenerationFamilyfaded.jpg";
-import "../Pages.css";
+
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import CardTravelIcon from "@mui/icons-material/CardTravel";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
@@ -25,7 +25,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="mainContainer">
+    <div className={classes.mainContainer}>
       <div className={classes.imageContainer}>
         <img className={classes.image} src={GenerationImage} alt="homepage" />
         <div className={classes.imageTextContainer}>

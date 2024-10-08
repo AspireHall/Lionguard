@@ -201,7 +201,12 @@ const Navbar = () => {
               href="https://calendly.com/lionguardfinancial"
             ></a>
           </div>
-          <div className={classes.bookAppBtn}>Book Appointment</div>
+          <a
+            style={{ textDecoration: "none" }}
+            href="https://calendly.com/lionguardfinancial"
+          >
+            <div className={classes.bookAppBtn}>Book Appointment</div>
+          </a>
         </div>
       </div>
     </div>

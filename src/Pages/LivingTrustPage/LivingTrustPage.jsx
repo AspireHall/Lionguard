@@ -1,7 +1,6 @@
-import "../Pages.css";
 const LivingTrustPage = () => {
   return (
-    <div className="mainContainer">
+    <div>
       <div className="font">Living Trust</div>
     </div>
   );
