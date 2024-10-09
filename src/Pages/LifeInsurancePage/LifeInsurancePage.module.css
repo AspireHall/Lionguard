@@ -198,6 +198,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  background-color: #5c7c89;
+  border-radius: 20px;
 }
 .smallCard {
   width: 325px;
