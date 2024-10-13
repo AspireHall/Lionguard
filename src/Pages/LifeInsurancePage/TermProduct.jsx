@@ -26,7 +26,7 @@ const TermProduct = () => {
       </p>
       <h1>Key features of term life insurance include:</h1>
       <div className={classes.smallCardContainer}>
-        <div className={classes.smallCard}>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} /> Affordability:{" "}
           </h2>
@@ -35,8 +35,8 @@ const TermProduct = () => {
             life insurance options, making it an attractive choice for those
             seeking maximum coverage at an affordable rate.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} /> Flexibility:{" "}
           </h2>
@@ -46,8 +46,8 @@ const TermProduct = () => {
             until your children are financially independent or until your
             mortgage is paid off
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} /> Death Benefit:{" "}
           </h2>
@@ -57,8 +57,8 @@ const TermProduct = () => {
             sum. This can provide financial security and stability to your loved
             ones during a difficult time
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} /> Renewability & Convertibility:
           </h2>
@@ -67,8 +67,8 @@ const TermProduct = () => {
             life insurance without the need for a medical exam, providing
             flexibility as your needs change over time.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} /> No Cash Value:
           </h2>
@@ -78,7 +78,7 @@ const TermProduct = () => {
             over time. It is purely designed to provide a death benefit to your
             beneficiaries.
           </p>
-        </div>
+        </section>
       </div>
     </>
   );

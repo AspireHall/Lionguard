@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import ContactUs from "../ContactUs";
 import classes from "./LifeInsurancePage.module.css";
 import headerImage from "../../assets/happyfamily.jpg";
 import TermProduct from "./TermProduct";
 import ReturnPremiumProduct from "./ReturnPremiumProduct";
 import FinalExpenseProduct from "./FinalExpenseProduct";
-import ContactPageIcon from "@mui/icons-material/ContactPage";
 
 const LifeInsurancePage = () => {
   const [insurance, setInsurance] = useState(<TermProduct />);
@@ -57,10 +56,7 @@ const LifeInsurancePage = () => {
         </button>
       </div>
       <div className={classes.sectionTwo}>{insurance}</div>
-      <Link className={classes.contactUsFooter} to="/contact">
-        <ContactPageIcon sx={{ width: "75px", height: "75px" }} />
-        Contact Us for a Free Quote
-      </Link>
+      <ContactUs />
     </div>
   );
 };

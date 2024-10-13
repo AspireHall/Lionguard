@@ -22,7 +22,7 @@ const ReturnPremiumProduct = () => {
         Key features of Return of Premium (ROP) term life insurance include:
       </h1>
       <div className={classes.smallCardContainer}>
-        <div className={classes.smallCard}>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             {" "}
             <BlurCircularIcon sx={iconColor} />
@@ -35,8 +35,8 @@ const ReturnPremiumProduct = () => {
             financial obligations such as mortgages, debts, and living expenses
             for your loved ones.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             {" "}
             <BlurCircularIcon sx={iconColor} />
@@ -49,8 +49,8 @@ const ReturnPremiumProduct = () => {
             from traditional term policies, offering a form of savings or
             investment return on the premiums paid.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             {" "}
             <BlurCircularIcon sx={iconColor} />
@@ -63,8 +63,8 @@ const ReturnPremiumProduct = () => {
             security of life insurance coverage along with the possibility of
             receiving a refund if they outlive the policy term.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             {" "}
             <BlurCircularIcon sx={iconColor} />
@@ -76,8 +76,8 @@ const ReturnPremiumProduct = () => {
             needs and financial goals. ROP Term lengths typically range from 20
             to 30 years.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             {" "}
             <BlurCircularIcon sx={iconColor} />
@@ -88,7 +88,7 @@ const ReturnPremiumProduct = () => {
             accumulate cash value over time. The return of premiums is only
             applicable if the insured person survives the term of the policy.
           </p>
-        </div>
+        </section>
       </div>
     </>
   );

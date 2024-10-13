@@ -26,10 +26,10 @@ const Footer = () => {
           <a href="https://www.investopedia.com/terms/l/lifeinsurance.asp">
             <button className={classes.articleBtn}>Life Insurance</button>
           </a>
-          <a href="https://www.investopedia.com/terms/l/lifeinsurance.asp">
+          <a href="https://www.investopedia.com/articles/retirement/05/071205.asp">
             <button className={classes.articleBtn}>Annuities</button>
           </a>
-          <a href="https://www.investopedia.com/terms/l/lifeinsurance.asp">
+          <a href="https://www.investopedia.com/terms/l/living-trust.asp">
             <button className={classes.articleBtn}>Living Trust</button>
           </a>
         </div>

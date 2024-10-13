@@ -1,0 +1,225 @@
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  z-index: -10;
+}
+
+.headerContainer {
+  width: 94%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #011425;
+  margin-top: 50px;
+  padding-bottom: 125px;
+  padding-top: 2%;
+  padding-right: 2%;
+  z-index: 0;
+}
+.headerLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+.headerRight {
+  width: 50%;
+  padding: 2%;
+}
+.headerRightImg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+.headerLeftImg {
+  max-width: 50%;
+  height: auto;
+}
+.headerLeftBtn {
+  font-size: 36px;
+  font-family: "Lato";
+  font-weight: 600;
+  text-decoration: none;
+  width: 400px;
+  height: 60px;
+  border: solid 1px red;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: white;
+  background-image: linear-gradient(to bottom, red, darkred);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerLeftBtn:hover {
+  background-image: linear-gradient(to bottom, rgb(83, 2, 2), rgb(11, 0, 0));
+}
+
+.productTitle {
+  font-size: 48px;
+}
+.productText {
+  font-size: 18px;
+  line-height: 22px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.productPlanContainer {
+  background: #012440;
+  width: 1300px;
+  height: 600px;
+  margin-top: -100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: solid 10px aliceblue;
+  z-index: 1;
+}
+
+.productPlanCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 90%;
+  border: solid 1px aliceblue;
+  border-radius: 20px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.productCardSection1 {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px aliceblue;
+}
+
+.productCardTitle1 {
+  font-size: 36px;
+  font-family: "Lato";
+  line-height: 12px;
+  color: #86b4c6;
+}
+.productCardTitle2 {
+  font-size: 44px;
+  font-family: "Lato";
+  line-height: 12px;
+  color: white;
+}
+
+.productCardSection2 {
+  width: 90%;
+  height: 60%;
+  color: white;
+  display: flex;
+}
+
+.productCardSection2Left {
+  width: 50%;
+}
+.productCardSection2Right {
+  width: 50%;
+}
+
+.productSectionText {
+  font-size: 20px;
+  font-family: "Lato";
+}
+
+.productCardSection3 {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productSectionBtn {
+  width: 400px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px #86b4c6;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, #86b4c6, #1f4959);
+  font-size: 32px;
+  color: white;
+  text-decoration: none;
+}
+.productSectionBtn:hover {
+  background-image: linear-gradient(to bottom, #1f4959, #071216);
+}
+
+.benefitsContainer {
+  width: 94%;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: white;
+  background-color: #011425;
+  margin-top: -100px;
+  margin-bottom: 50px;
+  padding-bottom: 125px;
+  padding-top: 7%;
+  padding-right: 2%;
+  z-index: 0;
+}
+.benefitsTitle {
+  width: 95%;
+  text-align: center;
+  border-bottom: solid 1px aliceblue;
+  padding-bottom: 20px;
+}
+
+.benefitsCard {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 400px;
+  height: 250px;
+  display: flex;
+  background-color: #1f4959;
+  border-radius: 20px;
+  padding: 5px;
+}
+.benefitsCardLeft {
+  width: 15%;
+  padding-top: 10px;
+}
+.benefitsCardRight {
+  font-size: 18px;
+  width: 85%;
+}
+
+.videoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.productVideo {
+  width: 831.11px;
+  height: 468.22px;
+  border-radius: 15px;
+}

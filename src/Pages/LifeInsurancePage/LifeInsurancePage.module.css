@@ -190,11 +190,13 @@
   font-size: 20px;
   line-height: 24px;
   width: 60%;
+  padding: 5px;
+  border-radius: 15px;
 }
 
 .smallCardContainer {
   display: flex;
-  width: 100%;
+  width: 87%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -221,25 +223,4 @@
 .smallCardText {
   font-size: 18px;
   color: rgb(74, 73, 73);
-}
-
-.contactUsFooter {
-  width: 30%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: solid 2px gray;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  border-radius: 20px;
-  font-size: 24px;
-  color: white;
-  text-decoration: none;
-  background-color: rgb(8, 44, 89);
-}
-
-.contactUsFooter:hover {
-  background-color: rgb(5, 86, 184);
 }

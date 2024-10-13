@@ -18,7 +18,7 @@ const FinalExpenseProduct = () => {
       </p>
       <h1>Key features of Final Expense life insurance include:</h1>
       <div className={classes.smallCardContainer}>
-        <div className={classes.smallCard}>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} />
             Purpose:{" "}
@@ -29,8 +29,8 @@ const FinalExpenseProduct = () => {
             It provides funds to cover funeral and burial expenses, medical
             bills, outstanding debts, and other end-of-life costs.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} />
             Coverage Amounts:
@@ -41,8 +41,8 @@ const FinalExpenseProduct = () => {
             is intended to be sufficient to cover the anticipated costs of a
             funeral and related expenses.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} />
             Simplified Underwriting:
@@ -54,8 +54,8 @@ const FinalExpenseProduct = () => {
             making it easier for individuals with pre-existing health conditions
             to obtain coverage.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} />
             Premiums:{" "}
@@ -66,8 +66,8 @@ const FinalExpenseProduct = () => {
             pay premiums on a monthly, quarterly, semi-annual, or annual basis,
             depending on their preferences and budget.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} />
             Permanent Coverage
@@ -79,8 +79,8 @@ const FinalExpenseProduct = () => {
             beneficiaries will receive the death benefit when the policyholder
             passes away, regardless of age or health status.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} />
             Death Benefit:{" "}
@@ -91,8 +91,8 @@ const FinalExpenseProduct = () => {
             to cover funeral expenses, settle outstanding debts, or provide
             financial support to surviving family members.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} />
             Flexibility:
@@ -103,8 +103,8 @@ const FinalExpenseProduct = () => {
             customize their coverage amounts and choose payment frequencies that
             best suit their needs and budget.
           </p>
-        </div>
-        <div className={classes.smallCard}>
+        </section>
+        <section className={classes.smallCard}>
           <h2 className={classes.smallCardTitle}>
             <BlurCircularIcon sx={iconColor} />
             Peace of Mind:{" "}
@@ -116,7 +116,7 @@ const FinalExpenseProduct = () => {
             reassurance that funeral and end-of-life expenses will be covered,
             allowing families to focus on grieving and healing.
           </p>
-        </div>
+        </section>
       </div>
     </>
   );
