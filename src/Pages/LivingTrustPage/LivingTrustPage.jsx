@@ -126,7 +126,7 @@ const LivingTrustPage = () => {
             <p>
               You could be printing your plan in about an hour. Our
               revolutionary technology streamlines the interview process and our
-              servers compile your documents as your comlet questions.
+              servers compile your documents as your complete questions.
             </p>
           </div>
         </section>
@@ -150,7 +150,7 @@ const LivingTrustPage = () => {
           <div className={classes.benefitsCardRight}>
             <h2>FLEXIBLE</h2>
             <p>
-              Our documents were prepared by estate plannin attorneys with
+              Our documents were prepared by estate planning attorneys with
               decades of experience helping thousands of clients nationwide.
               Every family situation , asset class, and bequest option is at
               your fingertips.

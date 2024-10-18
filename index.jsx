@@ -6,6 +6,7 @@ import LifeInsurancePage from "./src/Pages/LifeInsurancePage/LifeInsurancePage.j
 import AnnuitiesPage from "./src/Pages/AnnuitiesPage/AnnuitiesPage.jsx";
 import LivingTrustPage from "./src/Pages/LivingTrustPage/LivingTrustPage.jsx";
 import ContactPage from "./src/Pages/ContactPage/ContactPage.jsx";
+import Calculator from "./src/Pages/Calculator/Calculator.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./src/App.jsx";
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactPage />,
+      },
+      {
+        path: "/calculator",
+        element: <Calculator />,
       },
     ],
   },
