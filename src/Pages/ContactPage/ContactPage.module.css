@@ -1,0 +1,35 @@
+.mainContainer {
+  width: 90%;
+  height: 90%;
+  padding: 5%;
+  display: flex;
+  background-color: aliceblue;
+}
+.title {
+  font-size: 48px;
+  font-family: "Lato";
+}
+.text {
+  font-size: 20px;
+}
+
+.leftContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.rightContainer {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.image {
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+}
+.header {
+  padding: 3%;
+  margin-bottom: 50px;
+}

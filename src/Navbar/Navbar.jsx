@@ -184,10 +184,6 @@ const Navbar = () => {
             Contact
             <KeyboardArrowDownIcon />
           </Link>
-          <Link className={classes.menuFont} to="calculator">
-            Calculator
-            <KeyboardArrowDownIcon />
-          </Link>
         </div>
         <div className={classes.rightContainer}>
           <div className={classes.socialsContainer}>

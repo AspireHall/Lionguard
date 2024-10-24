@@ -1,10 +1,10 @@
 import GenerationImage from "../../assets/GenerationFamilyfaded.jpg";
-
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import CardTravelIcon from "@mui/icons-material/CardTravel";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import ContactUs from "../ContactUs";
 import classes from "./Homepage.module.css";
 
 const HomePage = () => {
@@ -102,6 +102,9 @@ const HomePage = () => {
             </p>
           </div>
         </a>
+      </div>
+      <div className={classes.contactUsDiv}>
+        <ContactUs />
       </div>
     </div>
   );

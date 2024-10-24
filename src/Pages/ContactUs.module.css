@@ -1,5 +1,5 @@
 .contactUsFooter {
-  width: 30%;
+  width: 400px;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -13,6 +13,13 @@
   color: white;
   text-decoration: none;
   background-color: rgb(8, 44, 89);
+}
+
+@media only screen and (max-width: 600px) {
+  .contactUsFooter {
+    width: 300px;
+    font-size: 22px;
+  }
 }
 
 .contactUsFooter:hover {

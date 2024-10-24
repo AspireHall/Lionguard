@@ -5,13 +5,20 @@
 
 .headerLogo {
   max-width: 50px;
-  min-width: 40px;
   height: auto;
   background-color: rgb(4, 73, 157);
   border-color: rgb(31, 99, 183);
   border-style: solid;
   border-width: 5px;
   border-radius: 50px;
+}
+@media only screen and (max-width: 900px) {
+  .headerLogo {
+    max-width: 35px;
+    border-width: 1px;
+    height: auto;
+    margin-right: 2px;
+  }
 }
 
 .leftContainer {
@@ -65,7 +72,6 @@
     width: 40%;
     height: inherit;
     display: flex;
-
     justify-content: center;
     align-items: center;
   }
@@ -153,9 +159,10 @@
   border-width: 2px;
   color: white;
   text-decoration: none;
-  font-size: clamp(0.8rem, 2vw + 0.1rem, 1rem);
+  font-size: clamp(0.7rem, 2vw + 0.1rem, 1rem);
   border-radius: 25px;
 }
+
 .bookAppBtn:hover {
   cursor: pointer;
   border-color: rgb(50, 129, 226);
@@ -164,6 +171,13 @@
   background-color: rgb(7, 96, 205);
   background-image: none;
   color: white;
+}
+
+@media only screen and (max-width: 450px) {
+  .bookAppBtn {
+    width: 100px;
+    height: 30px;
+  }
 }
 
 .a {

@@ -14,6 +14,7 @@
   padding-right: 4%;
 }
 .lionGuard {
+  font-size: clamp(1.2rem, 2vw + 0.1rem, 2.2rem);
   position: relative;
   width: 400px;
   background-color: aliceblue;
@@ -51,7 +52,7 @@
   font-size: clamp(1.5rem, 2vw + 0.1rem, 2rem);
 }
 .paragraph {
-  font-size: clamp(1rem, 2vw + 0.1rem, 1.4rem);
+  font-size: clamp(1rem, 2vw + 0.2rem, 1.4rem);
 }
 .cardContainer {
   display: flex;
@@ -76,6 +77,13 @@
   border-width: 1px;
   z-index: 0;
 }
+
+@media only screen and (max-width: 1800px) {
+  .card {
+    width: 325px;
+  }
+}
+
 .cardGradient {
   background-image: linear-gradient(
     to right,
