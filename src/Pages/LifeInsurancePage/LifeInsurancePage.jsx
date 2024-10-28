@@ -27,7 +27,9 @@ const LifeInsurancePage = () => {
       <img className={classes.headerImage} src={headerImage} />
       <div className={classes.sectionOne}>
         <div className={classes.sectionOneTop}>
-          <h1>Our Life Insurance Services</h1>
+          <h1 className={classes.sectionOneTitle}>
+            Our Life Insurance Services
+          </h1>
         </div>
         <div className={classes.sectionOneBottom}>
           <p>Are you ready to safeguad your future?</p>

@@ -19,6 +19,8 @@ const ContactForm = () => {
         }
       );
 
+    setMessage("Your message was sent, Thank You.");
+
     setFormData({
       firstname: "",
       lastname: "",
@@ -29,7 +31,7 @@ const ContactForm = () => {
       message: "",
     });
   };
-
+  const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -98,7 +100,6 @@ const ContactForm = () => {
           placeholder="required"
         />
       </section>
-
       <section className={classes.formSection}>
         <label className={classes.inputText} htmlFor="state">
           State:
@@ -142,7 +143,6 @@ const ContactForm = () => {
           value={formData.agentname}
           onChange={handleChange}
         />
-
         <div className={classes.formSplit}></div>
       </section>
       <section className={classes.formSectionMessage}>
@@ -159,6 +159,7 @@ const ContactForm = () => {
           placeholder="required"
         />
       </section>
+      <div className={classes.messageRes}>{message}</div>
       <button className={classes.submitBtn} value="Send" type="submit">
         Submit
       </button>

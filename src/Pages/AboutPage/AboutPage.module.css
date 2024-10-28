@@ -4,6 +4,11 @@
   background-color: aliceblue;
   padding: 3%;
 }
+@media only screen and (max-width: 900px) {
+  .mainContainer {
+    display: block;
+  }
+}
 .leftContainer {
   width: 55%;
   height: 100%;
@@ -12,6 +17,12 @@
   align-items: center;
   padding-left: 4%;
   padding-right: 4%;
+}
+
+@media only screen and (max-width: 900px) {
+  .leftContainer {
+    width: 92%;
+  }
 }
 .lionGuard {
   font-size: clamp(1.2rem, 2vw + 0.1rem, 2.2rem);
@@ -41,10 +52,25 @@
   justify-content: center;
 }
 
+@media only screen and (max-width: 900px) {
+  .rightContainer {
+    width: 100%;
+    height: 400px;
+    background: url("../../assets/parentsWithDaughter.jpg");
+    background-position: center bottom 600px;
+  }
+}
+
 .image {
   max-width: 93%;
   height: auto;
   border-radius: 15px;
+}
+
+@media only screen and (max-width: 900px) {
+  .image {
+    display: none;
+  }
 }
 
 .title {

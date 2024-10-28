@@ -18,10 +18,21 @@
   margin-top: 50px;
   background-color: #1f4959;
 }
+@media only screen and (max-width: 1000px) {
+  .topContainer {
+    display: block;
+  }
+}
+
 .topLeft {
   width: 40%;
   height: 100%;
   padding-right: 2%;
+}
+@media only screen and (max-width: 1000px) {
+  .topLeft {
+    width: 100%;
+  }
 }
 .titleTopLeft {
   font-size: 50px;
@@ -35,6 +46,12 @@
 .topRight {
   width: 60%;
 }
+
+@media only screen and (max-width: 1000px) {
+  .topRight {
+    width: 100%;
+  }
+}
 .imageHeader {
   border-radius: 15px;
   max-width: 100%;
@@ -46,12 +63,19 @@
   width: 80%;
   margin-bottom: 50px;
 }
+
 .bottomTop {
   background-color: #011425;
   color: white;
   margin-top: 25px;
   display: flex;
   border-radius: 10px;
+}
+@media screen and (max-width: 1000px) {
+  .bottomTop {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .bottomHeader {
@@ -60,8 +84,19 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media screen and (max-width: 1000px) {
+  .bottomHeader {
+    width: 100%;
+  }
+}
 .bottomBody {
   width: 70%;
+}
+@media screen and (max-width: 1000px) {
+  .bottomBody {
+    width: 100%;
+  }
 }
 .productTitle {
   font-size: 48px;
@@ -84,6 +119,7 @@
 .productSubDesc {
   font-size: 18px;
   width: 90%;
+  padding-left: 10px;
 }
 
 .bottomMiddle {
@@ -94,10 +130,24 @@
   border-radius: 10px;
 }
 
+@media screen and (max-width: 1000px) {
+  .bottomMiddle {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .bottomEnd {
   background-color: #242424;
   color: white;
   margin-top: 25px;
   display: flex;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .bottomEnd {
+    display: flex;
+    flex-direction: column;
+  }
 }
