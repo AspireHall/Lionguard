@@ -27,6 +27,7 @@ const ContactForm = () => {
       email: "",
       state: "",
       age: "",
+      phone: "",
       agentname: "",
       message: "",
     });
@@ -38,6 +39,7 @@ const ContactForm = () => {
     email: "",
     state: "",
     age: "",
+    phone: "",
     agentname: "",
     message: "",
   });
@@ -101,31 +103,48 @@ const ContactForm = () => {
         />
       </section>
       <section className={classes.formSection}>
-        <label className={classes.inputText} htmlFor="state">
-          State:
-        </label>
-        <input
-          className={classes.input}
-          type="text"
-          id="state"
-          name="state"
-          value={formData.state}
-          onChange={handleChange}
-          required
-        />
+        <div className={classes.formSectionDivLeft}>
+          <label className={classes.inputText} htmlFor="state">
+            State:
+          </label>
+          <input
+            className={classes.input}
+            type="text"
+            id="state"
+            name="state"
+            value={formData.state}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className={classes.formSectionDivRight}>
+          <label className={classes.inputText} htmlFor="age">
+            Age:
+          </label>
+          <input
+            className={classes.input}
+            type="number"
+            id="age"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            required
+          />
+        </div>
       </section>
       <section className={classes.formSection}>
-        <label className={classes.inputText} htmlFor="age">
-          Age:
+        <label className={classes.inputText} htmlFor="phone">
+          Phone Number:
         </label>
         <input
           className={classes.input}
-          type="number"
-          id="age"
-          name="age"
-          value={formData.age}
+          type="phone"
+          id="phone"
+          name="phone"
+          value={formData.phone}
           onChange={handleChange}
           required
+          placeholder="required"
         />
       </section>
       <section className={classes.sectionBreak}>

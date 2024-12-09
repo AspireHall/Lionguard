@@ -35,8 +35,8 @@ const LifeInsurancePage = () => {
           <p>Are you ready to safeguad your future?</p>
           <p>
             Let&apos;s talk about securing your tomorrow with peace of mind.
-            Life insurance is more than just a policy; it's a promise to protect
-            what matters most.
+            Life insurance is more than just a policy; it&apos;s a promise to
+            protect what matters most.
           </p>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import GenerationImage from "../../assets/GenerationFamilyfaded.jpg";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import CardTravelIcon from "@mui/icons-material/CardTravel";
@@ -38,7 +39,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className={classes.productContainer}>
-        <a className={classes.link} href="/lifeInsurance">
+        <Link className={classes.link} to="/lifeInsurance">
           <HealthAndSafetyIcon sx={sx} />
           <div className={classes.textContainer}>
             <h1 className={classes.productTitle}> Life Insurance</h1>
@@ -54,8 +55,8 @@ const HomePage = () => {
               Learn More <KeyboardDoubleArrowRightIcon />
             </p>
           </div>
-        </a>
-        <a className={classes.link} href="/annuities">
+        </Link>
+        <Link className={classes.link} to="/annuities">
           <CardTravelIcon sx={sx} />
           <div className={classes.textContainer}>
             <h1 className={classes.productTitle}> Annuities</h1>
@@ -70,8 +71,8 @@ const HomePage = () => {
               Learn More <KeyboardDoubleArrowRightIcon />
             </p>
           </div>
-        </a>
-        <a className={classes.link} href="/livingTrust">
+        </Link>
+        <Link className={classes.link} to="/livingTrust">
           <AccountBalanceIcon sx={sx} />
           <div className={classes.textContainer}>
             <h1 className={classes.productTitle}> Living Trust</h1>
@@ -87,8 +88,8 @@ const HomePage = () => {
               Learn More <KeyboardDoubleArrowRightIcon />
             </p>
           </div>
-        </a>
-        <a className={classes.link} href="/about">
+        </Link>
+        <Link className={classes.link} to="/about">
           <ContactsIcon sx={sx} />
           <div className={classes.textContainer}>
             <h1 className={classes.productTitle}>Learn More</h1>
@@ -101,7 +102,7 @@ const HomePage = () => {
               Learn More <KeyboardDoubleArrowRightIcon />
             </p>
           </div>
-        </a>
+        </Link>
       </div>
       <div className={classes.contactUsDiv}>
         <ContactUs />
