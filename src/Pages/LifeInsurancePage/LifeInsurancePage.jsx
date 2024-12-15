@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ContactUs from "../ContactUs";
 import classes from "./LifeInsurancePage.module.css";
 import headerImage from "../../assets/happyfamily.jpg";
@@ -22,7 +23,9 @@ const LifeInsurancePage = () => {
     <div className={classes.mainContainer}>
       <div className={classes.contact}>
         <h1 className={classes.contactNmb}>323-369-1674</h1>
-        <button className={classes.contactBtn}>GET A FREEE QUOTE</button>
+        <Link to="/contact">
+          <div className={classes.contactBtn}> GET A FREEE QUOTE</div>
+        </Link>
       </div>
       <img className={classes.headerImage} src={headerImage} />
       <div className={classes.sectionOne}>
