@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import GenerationImage from "../../assets/GenerationFamilyfaded.jpg";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import CardTravelIcon from "@mui/icons-material/CardTravel";

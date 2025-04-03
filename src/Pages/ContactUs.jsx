@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
 import classes from "./ContactUs.module.css";
 

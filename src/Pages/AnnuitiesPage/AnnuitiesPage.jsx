@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import classes from "./AnnuitiesPage.module.css";
 import manWithBook from "../../assets/ManwithBook.jpg";
 import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";

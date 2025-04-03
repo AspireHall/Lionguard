@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import classes from "./Navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import headerLogo from "../assets/LGHeaderLogo.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -67,7 +67,7 @@ const Navbar = () => {
     <div className={classes.mainContainer}>
       <div className={`navbar ${navbarScrolled ? "scrolled" : ""}`}>
         <div className={classes.leftContainer}>
-          <Link className={classes.logoLink}>
+          <Link className={classes.logoLink} to="/">
             <img className={classes.headerLogo} src={headerLogo} />
             Lionguard Financial
           </Link>
@@ -124,25 +124,25 @@ const Navbar = () => {
             <MenuItem onClick={handleClose} sx={menusx}>
               <HealthAndSafetyIcon sx={{ color: "white" }} />
               &nbsp;
-              <Link className={classes.dropMenuFont} to="lifeInsurance">
+              <Link className={classes.dropMenuFont} to="/lifeInsurance">
                 Life Insurance
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose} sx={menusx}>
               <CardTravelIcon sx={{ color: "white" }} /> &nbsp;
-              <Link className={classes.dropMenuFont} to="annuities">
+              <Link className={classes.dropMenuFont} to="/annuities">
                 Annuities
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose} sx={menusx}>
               <AccountBalanceIcon sx={{ color: "white" }} /> &nbsp;
-              <Link className={classes.dropMenuFont} to="livingTrust">
+              <Link className={classes.dropMenuFont} to="/livingTrust">
                 Living Trust
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose} sx={menusx}>
               <ContactsIcon sx={{ color: "white" }} /> &nbsp;
-              <Link className={classes.dropMenuFont} to="about">
+              <Link className={classes.dropMenuFont} to="/about">
                 Learn More
               </Link>
             </MenuItem>
@@ -164,23 +164,23 @@ const Navbar = () => {
           </Menu>
         </div>
         <div className={classes.middleContainer}>
-          <Link className={classes.menuFont} to="about">
+          <Link className={classes.menuFont} to="/about">
             About
             <KeyboardArrowDownIcon />
           </Link>
-          <Link className={classes.menuFont} to="lifeInsurance">
+          <Link className={classes.menuFont} to="/lifeInsurance">
             Life Insurance
             <KeyboardArrowDownIcon />
           </Link>
-          <Link className={classes.menuFont} to="annuities">
+          <Link className={classes.menuFont} to="/annuities">
             Annuities
             <KeyboardArrowDownIcon />
           </Link>
-          <Link className={classes.menuFont} to="livingTrust">
+          <Link className={classes.menuFont} to="/livingTrust">
             Living Trust
             <KeyboardArrowDownIcon />
           </Link>
-          <Link className={classes.menuFont} to="contact">
+          <Link className={classes.menuFont} to="/contact">
             Contact
             <KeyboardArrowDownIcon />
           </Link>
