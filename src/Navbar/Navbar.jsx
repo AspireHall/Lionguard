@@ -7,6 +7,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import XIcon from "@mui/icons-material/X";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import CardTravelIcon from "@mui/icons-material/CardTravel";
+import CalculateIcon from "@mui/icons-material/Calculate";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
@@ -79,7 +80,7 @@ const Navbar = () => {
               borderStyle: "solid",
               borderColor: "white",
               borderWidth: "1px",
-              width: "130px",
+              width: "200px",
               "&:hover": {
                 borderColor: "black",
                 color: "black",
@@ -135,6 +136,12 @@ const Navbar = () => {
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose} sx={menusx}>
+              <CalculateIcon sx={{ color: "white" }} /> &nbsp;
+              <Link className={classes.dropMenuFont} to="/retirementCalculator">
+                Calculator
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={menusx}>
               <AccountBalanceIcon sx={{ color: "white" }} /> &nbsp;
               <Link className={classes.dropMenuFont} to="/livingTrust">
                 Living Trust
@@ -174,6 +181,10 @@ const Navbar = () => {
           </Link>
           <Link className={classes.menuFont} to="/annuities">
             Annuities
+            <KeyboardArrowDownIcon />
+          </Link>
+          <Link className={classes.menuFont} to="/retirementcalculator">
+            Retirement Calculator
             <KeyboardArrowDownIcon />
           </Link>
           <Link className={classes.menuFont} to="/livingTrust">
