@@ -17,14 +17,15 @@ const LivingTrustPage = () => {
     <div className={classes.mainContainer}>
       <div className={classes.headerContainer}>
         <div className={classes.headerLeft}>
-          <img
+          {/*<img
             className={classes.headerLeftImg}
-            src={EstateProImg}
+            src={""}
             alt="LivingTrustLogo"
           />
+          */}
           <a
             href={
-              "https://www.estatedocspro.com/free_trial.php?type=delta&a=Victor"
+              "https://www.mylegacylock.com/free_trial.php?type=delta&a=Victor"
             }
             className={classes.headerLeftBtn}
           >
