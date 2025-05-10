@@ -138,184 +138,221 @@ const FeeImpactChart = () => {
     });
   }, [formData]);
   return (
-    <div className={classes.pageWrapper}>
+    <div className={classes.mainContainer}>
       <header className={classes.header}>
         <h1>Financial Calculator</h1>
       </header>
-      <main className={classes.main}>
-        <div className={classes.formSection}>
-          <div className="space" style={{ marginTop: "69px" }}></div>
-          <form className={classes.formSection}>
-            <label className={classes.label} htmlFor="currentAge">
-              Current Age
-            </label>
-            <input
-              className={classes.input}
-              type="number"
-              id="currentAge"
-              value={formData.currentAge}
-              onChange={handleInputChange}
-            />
-            <p>Enter your current age to see the growth potential over time.</p>
-            <label className={classes.label} htmlFor="retirementAge">
-              Retirement Age
-            </label>
-            <input
-              className={classes.input}
-              type="number"
-              id="retirementAge"
-              value={formData.retirementAge}
-              onChange={handleInputChange}
-            />
-            <p>Standard retirement age; you can adjust based on your plan.</p>
-            <label className={classes.label} htmlFor="lumpSum">
-              Initial Lump Sum ($)
-            </label>
-            <input
-              className={classes.input}
-              type="number"
-              id="lumpSum"
-              value={formData.lumpSum}
-              onChange={handleInputChange}
-            />
-            <p>If none, leave at 0.</p>
-            <label className={classes.label} htmlFor="monthly">
-              Monthly Contributions ($)
-            </label>
-            <input
-              className={classes.input}
-              type="number"
-              id="monthly"
-              value={formData.monthly}
-              onChange={handleInputChange}
-            />
-            <p>Consistent contributions help build wealth over time.</p>
-            <label className={classes.label} htmlFor="interestRate">
-              Expected Annual Return (%)
-            </label>
-            <input
-              className={classes.input}
-              type="number"
-              id="interestRate"
-              value={formData.interestRate}
-              onChange={handleInputChange}
-            />
-            <p>Adjust based on your target market return.</p>
-            <label className={classes.label} htmlFor="fees">
-              Management Fees (%)
-            </label>
-            <input
-              className={classes.input}
-              type="number"
-              id="fees"
-              value={formData.fees}
-              onChange={handleInputChange}
-            />
-            <p>1% is typical, but lower fees are better.</p>
-            <span>
-              <strong>Total Fees ($)</strong>
-            </span>
-            <input
-              style={{ color: "red" }}
-              type="text"
-              readOnly
-              className={classes.input}
-              value={
-                "$" + Number(results.totalFees.toFixed(2)).toLocaleString()
-              }
-            />
-            <p>Total paid in fees over your contribution period.</p>
-            <span>
-              <strong>Impact of Fees ($)</strong>
-            </span>
-            <input
-              className={classes.input}
-              style={{ color: "red" }}
-              type="text"
-              readOnly
-              value={"$" + results.feeImpact.toLocaleString()}
-            />
-            <p>This includes both direct fees and lost compounding.</p>
-          </form>
-        </div>
-        <div className={classes.resultsSection}>
-          <h2>
-            <strong>Results</strong>
-          </h2>
-          <div className={classes.resultField}>
-            <label className={classes.label}>
-              <strong>Total Contributions</strong>
-            </label>
-            <input
-              className={classes.input}
-              type="text"
-              readOnly
-              value={results.totalContributions.toLocaleString()}
-            />
-          </div>
-          <div className={classes.resultField}>
-            <label className={classes.label}>
-              <strong>Total Interest Earned</strong>
-            </label>
-            <input
-              className={classes.input}
-              type="text"
-              readOnly
-              value={results.totalInterest.toLocaleString()}
-            />
-          </div>
-          <div className={classes.chartDescription}>
-            Side-by-side comparison of your wealth with and without fees.
-          </div>
-          <div
-            style={{
-              width: "auto",
-              height: "auto",
-              marginBottom: "50px",
-              justifyContent: "space-between",
-            }}
-          >
-            <div className="chart-container">
-              <canvas ref={canvasRef}></canvas>
-            </div>
-          </div>
-          <div className="chart-results">
-            <div className="result-field">
-              <label className={classes.label}>
-                <strong>Total Projected Account Without Fees</strong>
+      <main className={classes.mainSection}>
+        <div className={classes.leftContainer}>
+          <div className={classes.formSection}>
+            <div className="space" style={{ marginTop: "69px" }}></div>
+            <form className={classes.formSection}>
+              <label className={classes.label} htmlFor="currentAge">
+                Current Age
               </label>
               <input
                 className={classes.input}
-                style={{ color: "green" }}
+                type="number"
+                id="currentAge"
+                value={formData.currentAge}
+                onChange={handleInputChange}
+              />
+              <p>
+                Enter your current age to see the growth potential over time.
+              </p>
+              <label className={classes.label} htmlFor="retirementAge">
+                Retirement Age
+              </label>
+              <input
+                className={classes.input}
+                type="number"
+                id="retirementAge"
+                value={formData.retirementAge}
+                onChange={handleInputChange}
+              />
+              <p>
+                65 is the standard retirement age in many countries, though you
+                may choose to retire earlier or later based on your financial
+                situation.
+              </p>
+              <label className={classes.label} htmlFor="lumpSum">
+                Initial Lump Sum ($)
+              </label>
+              <input
+                className={classes.input}
+                type="number"
+                id="lumpSum"
+                value={formData.lumpSum}
+                onChange={handleInputChange}
+              />
+              <p>
+                The initial investment you start with. If you don&apos;t have
+                one, enter 0.
+              </p>
+              <label className={classes.label} htmlFor="monthly">
+                Monthly Contributions ($)
+              </label>
+              <input
+                className={classes.input}
+                type="number"
+                id="monthly"
+                value={formData.monthly}
+                onChange={handleInputChange}
+              />
+              <p>
+                Regular monthly contributions are key to building wealth over
+                time through dollar-cost averaging and compound growth.
+              </p>
+              <label className={classes.label} htmlFor="interestRate">
+                Expected Annual Return (%)
+              </label>
+              <input
+                className={classes.input}
+                type="number"
+                id="interestRate"
+                value={formData.interestRate}
+                onChange={handleInputChange}
+              />
+              <p>
+                7.5% is used as a default based on historical market
+                performance, but you can adjust this based on your expected
+                returns.
+              </p>
+              <label className={classes.label} htmlFor="fees">
+                Management Fees (%)
+              </label>
+              <input
+                className={classes.input}
+                type="number"
+                id="fees"
+                value={formData.fees}
+                onChange={handleInputChange}
+              />
+              <p>
+                1% is a typical management fee charged by 401k&apos;s, financial
+                advisors, and funds. Lower fees can significantly boost your
+                returns over time.
+              </p>
+              <span>
+                <strong>Total Fees ($)</strong>
+              </span>
+              <input
+                style={{ color: "red" }}
                 type="text"
                 readOnly
+                className={classes.input}
                 value={
-                  "$" + Number(results.finalNoFees.toFixed(2)).toLocaleString()
+                  "$" + Number(results.totalFees.toFixed(2)).toLocaleString()
                 }
               />
-            </div>
-            <div className={classes.resultField}>
-              <label className={classes.label}>
-                <strong>Total Projected Account With Fees</strong>
-              </label>
+              <p>
+                This represents the total amount paid in fees over your
+                contribution period.
+              </p>
+              <span>
+                <strong>Impact of Fees ($)</strong>
+              </span>
               <input
                 className={classes.input}
                 style={{ color: "red" }}
                 type="text"
                 readOnly
-                value={
-                  "$" +
-                  Number(results.finalWithFees.toFixed(2)).toLocaleString()
-                }
+                value={"$" + results.feeImpact.toLocaleString()}
+              />
+              <p>
+                The total amount of money lost to fees over time, including both
+                the direct fee payments and the lost compound growth on those
+                fees.
+              </p>
+              <p></p>
+            </form>
+          </div>
+        </div>
+        <div className={classes.rightContainer}>
+          <div className={classes.resultSection}>
+            <h2>
+              <strong>Results</strong>
+            </h2>
+            <div className={classes.resultField}>
+              <label className={classes.label}>
+                <strong>Total Contributions</strong>
+              </label>
+              <input
+                className={classes.input}
+                type="text"
+                readOnly
+                value={results.totalContributions.toLocaleString()}
               />
             </div>
-          </div>
+            <div className={classes.resultField}>
+              <label className={classes.label}>
+                <strong>Total Interest Earned</strong>
+              </label>
+              <input
+                className={classes.input}
+                type="text"
+                readOnly
+                value={results.totalInterest.toLocaleString()}
+              />
+            </div>
+            <div className={classes.chartDescription}>
+              Side-by-side comparison of your wealth with and without fees.
+            </div>
+            <div
+              style={{
+                width: "auto",
+                height: "auto",
+                marginBottom: "50px",
+                justifyContent: "space-between",
+              }}
+            >
+              <div className={classes.chartResults}>
+                <canvas ref={canvasRef}></canvas>
+              </div>
+            </div>
+            <div className={classes.chartResults}>
+              <div className={classes.resultField}>
+                <label className={classes.label}>
+                  <strong>Total Projected Account Without Fees</strong>
+                </label>
+                <input
+                  className={classes.input}
+                  style={{ color: "green" }}
+                  type="text"
+                  readOnly
+                  value={
+                    "$" +
+                    Number(results.finalNoFees.toFixed(2)).toLocaleString()
+                  }
+                />
+              </div>
+              <div className={classes.resultField}>
+                <label className={classes.label}>
+                  <strong>Total Projected Account With Fees</strong>
+                </label>
+                <input
+                  className={classes.input}
+                  style={{ color: "red" }}
+                  type="text"
+                  readOnly
+                  value={
+                    "$" +
+                    Number(results.finalWithFees.toFixed(2)).toLocaleString()
+                  }
+                />
+              </div>
+            </div>
 
-          <p className={classes.disclaimer}>
-            Educational Purposes Only: This premium financial calculator
-            illustrates the power of compound growth. Projections are not
-            guarantees. Use this as a planning tool.
-          </p>
+            <p className={classes.disclaimer}>
+              Educational Purposes Only: This premium financial calculator is
+              designed to illustrate the power of compound growth and help you
+              visualize your financial journey. The projections shown are based
+              on consistent returns and should be used as a planning tool rather
+              than a guarantee of future performance. LionGuard is committed to
+              providing you with the insights needed to make informed financial
+              decisions for a secure future.
+            </p>
+          </div>
         </div>
       </main>
     </div>
