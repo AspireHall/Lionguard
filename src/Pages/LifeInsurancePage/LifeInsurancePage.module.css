@@ -10,9 +10,14 @@
   background-color: aliceblue;
 }
 .headerImage {
-  max-width: 1400px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
+}
+@media only screen and (max-width: 900px) {
+}
+.headerImage {
+  margin-bottom: 160px;
 }
 .contact {
   width: 70%;

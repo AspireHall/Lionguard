@@ -1,5 +1,5 @@
 import LivingTrustImg from "../../assets/LivingTrustLG.png";
-import EstateProImg from "../../assets/EstateProImage.png";
+//import EstateProImg from "../../assets/EstateProImage.png";
 import classes from "./LivingTrustPage.module.css";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import UpdateIcon from "@mui/icons-material/Update";
