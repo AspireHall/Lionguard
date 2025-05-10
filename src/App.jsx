@@ -19,7 +19,7 @@ function App() {
         <Route path="about" element={<AboutPage />} />
         <Route path="lifeInsurance" element={<LifeInsurancePage />} />
         <Route path="annuities" element={<AnnuitiesPage />} />
-        <Route path="retirementcalculator" element={<FeeImpactChart />} />
+        <Route path="calculator" element={<FeeImpactChart />} />
         <Route path="livingTrust" element={<LivingTrustPage />} />
         <Route path="contact" element={<ContactPage />} />
       </Routes>

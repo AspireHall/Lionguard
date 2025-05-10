@@ -128,7 +128,7 @@ const FeeImpactChart = () => {
             padding: 30,
             titleAlign: "left",
             bodyAlign: "left",
-            enabled: true,
+            //enabled: true,
 
             intersect: false,
             callbacks: {

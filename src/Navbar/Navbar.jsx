@@ -137,7 +137,7 @@ const Navbar = () => {
             </MenuItem>
             <MenuItem onClick={handleClose} sx={menusx}>
               <CalculateIcon sx={{ color: "white" }} /> &nbsp;
-              <Link className={classes.dropMenuFont} to="/retirementCalculator">
+              <Link className={classes.dropMenuFont} to="/calculator">
                 Calculator
               </Link>
             </MenuItem>
@@ -183,7 +183,7 @@ const Navbar = () => {
             Annuities
             <KeyboardArrowDownIcon />
           </Link>
-          <Link className={classes.menuFont} to="/retirementcalculator">
+          <Link className={classes.menuFont} to="/calculator">
             Calculator
             <KeyboardArrowDownIcon />
           </Link>
