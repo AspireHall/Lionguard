@@ -5,12 +5,13 @@ import { Chart } from "chart.js/auto";
 const FeeImpactChart = () => {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
+
   const [formData, setFormData] = useState({
-    currentAge: 30,
+    currentAge: 0,
     retirementAge: 65,
     lumpSum: 0,
     monthly: 100,
-    interestRate: 10,
+    interestRate: 7.5,
     fees: 1,
   });
 
@@ -140,7 +141,7 @@ const FeeImpactChart = () => {
   return (
     <div className={classes.mainContainer}>
       <header className={classes.header}>
-        <h1>Financial Calculator</h1>
+        <h1>Lionguard Financial Calculator</h1>
       </header>
       <main className={classes.mainSection}>
         <div className={classes.leftContainer}>
@@ -155,7 +156,7 @@ const FeeImpactChart = () => {
                 type="number"
                 id="currentAge"
                 placeholder={formData.currentAge}
-                value={formData.currentAge}
+                value={setFormData.currentAge}
                 onChange={handleInputChange}
               />
               <p>
@@ -168,7 +169,8 @@ const FeeImpactChart = () => {
                 className={classes.input}
                 type="number"
                 id="retirementAge"
-                value={formData.retirementAge}
+                placeholder={formData.retirementAge}
+                value={setFormData.retirementAge}
                 onChange={handleInputChange}
               />
               <p>
@@ -183,7 +185,7 @@ const FeeImpactChart = () => {
                 className={classes.input}
                 type="number"
                 id="lumpSum"
-                value={formData.lumpSum}
+                value={setFormData.lumpSum}
                 onChange={handleInputChange}
               />
               <p>
@@ -197,7 +199,8 @@ const FeeImpactChart = () => {
                 className={classes.input}
                 type="number"
                 id="monthly"
-                value={formData.monthly}
+                value={setFormData.monthly}
+                placeholder={formData.monthly}
                 onChange={handleInputChange}
               />
               <p>
@@ -211,7 +214,8 @@ const FeeImpactChart = () => {
                 className={classes.input}
                 type="number"
                 id="interestRate"
-                value={formData.interestRate}
+                placeholder={formData.interestRate}
+                value={setFormData.interestRate}
                 onChange={handleInputChange}
               />
               <p>
@@ -226,7 +230,8 @@ const FeeImpactChart = () => {
                 className={classes.input}
                 type="number"
                 id="fees"
-                value={formData.fees}
+                placeholder={formData.fees}
+                value={setFormData.fees}
                 onChange={handleInputChange}
               />
               <p>
@@ -347,13 +352,15 @@ const FeeImpactChart = () => {
             </div>
 
             <p className={classes.disclaimer}>
-              Educational Purposes Only: This premium financial calculator is
-              designed to illustrate the power of compound growth and help you
-              visualize your financial journey. The projections shown are based
-              on consistent returns and should be used as a planning tool rather
-              than a guarantee of future performance. LionGuard is committed to
-              providing you with the insights needed to make informed financial
-              decisions for a secure future.
+              <strong>
+                Educational Purposes Only: This premium financial calculator is
+                designed to illustrate the power of compound growth and help you
+                visualize your financial journey. The projections shown are
+                based on consistent returns and should be used as a planning
+                tool rather than a guarantee of future performance. LionGuard is
+                committed to providing you with the insights needed to make
+                informed financial decisions for a secure future.
+              </strong>
             </p>
           </div>
         </div>
