@@ -350,7 +350,7 @@ const FeeImpactChart = () => {
                 justifyContent: "space-between",
               }}
             >
-              <div className={classes.chartResults}>
+              <div className={classes.chartContainer}>
                 <canvas ref={canvasRef}></canvas>
               </div>
             </div>

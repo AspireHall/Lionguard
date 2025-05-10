@@ -103,6 +103,11 @@
   text-align: center;
 }
 
+.chartContainer {
+  display: flex;
+  height: 35%;
+}
+
 .chartResults {
   display: flex;
   flex-direction: column;
