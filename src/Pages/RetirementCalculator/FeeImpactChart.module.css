@@ -6,7 +6,7 @@
   color: #333;
 }
 
-.pageWrapper {
+.page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -37,9 +37,10 @@
 
 /* Form and results sections */
 .formSection,
-.resultsSection {
+.resultsection {
   background-color: #fff;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   flex: 1 1 45%;

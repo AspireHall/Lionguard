@@ -212,6 +212,30 @@ const FeeImpactChart = () => {
               onChange={handleInputChange}
             />
             <p>1% is typical, but lower fees are better.</p>
+            <span>
+              <strong>Total Fees ($)</strong>
+            </span>
+            <input
+              style={{ color: "red" }}
+              type="text"
+              readOnly
+              className={classes.input}
+              value={
+                "$" + Number(results.totalFees.toFixed(2)).toLocaleString()
+              }
+            />
+            <p>Total paid in fees over your contribution period.</p>
+            <span>
+              <strong>Impact of Fees ($)</strong>
+            </span>
+            <input
+              className={classes.input}
+              style={{ color: "red" }}
+              type="text"
+              readOnly
+              value={"$" + results.feeImpact.toLocaleString()}
+            />
+            <p>This includes both direct fees and lost compounding.</p>
           </form>
         </div>
         <div className={classes.resultsSection}>
@@ -286,28 +310,7 @@ const FeeImpactChart = () => {
               />
             </div>
           </div>
-          <span>
-            <strong>Total Fees ($)</strong>
-          </span>
-          <input
-            style={{ color: "red" }}
-            type="text"
-            readOnly
-            className={classes.input}
-            value={"$" + Number(results.totalFees.toFixed(2)).toLocaleString()}
-          />
-          <p>Total paid in fees over your contribution period.</p>
-          <span>
-            <strong>Impact of Fees ($)</strong>
-          </span>
-          <input
-            className={classes.input}
-            style={{ color: "red" }}
-            type="text"
-            readOnly
-            value={"$" + results.feeImpact.toLocaleString()}
-          />
-          <p>This includes both direct fees and lost compounding.</p>
+
           <p className={classes.disclaimer}>
             Educational Purposes Only: This premium financial calculator
             illustrates the power of compound growth. Projections are not
