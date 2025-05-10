@@ -1,6 +1,6 @@
+import "./FeeImpactChart.module.css";
 import { useEffect, useRef, useState } from "react";
 import { Chart } from "chart.js/auto";
-import "./FeeImpactChart.module.css";
 
 const FeeImpactChart = () => {
   const canvasRef = useRef(null);
@@ -140,7 +140,7 @@ const FeeImpactChart = () => {
   return (
     <div className="page-wrapper">
       <header>
-        <h1>LionGuard Financial Calculator</h1>
+        <h1>Financial Calculator</h1>
       </header>
       <main>
         <div className="form-section">
