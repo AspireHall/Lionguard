@@ -184,7 +184,7 @@ const Navbar = () => {
             <KeyboardArrowDownIcon />
           </Link>
           <Link className={classes.menuFont} to="/retirementcalculator">
-            Retirement Calculator
+            Calculator
             <KeyboardArrowDownIcon />
           </Link>
           <Link className={classes.menuFont} to="/livingTrust">

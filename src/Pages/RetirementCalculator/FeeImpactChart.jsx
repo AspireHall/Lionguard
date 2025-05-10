@@ -1,6 +1,7 @@
 import classes from "./FeeImpactChart.module.css";
 import { useEffect, useRef, useState } from "react";
 import { Chart } from "chart.js/auto";
+import CrosshairPlugin from "chartjs-plugin-crosshair";
 
 const FeeImpactChart = () => {
   const canvasRef = useRef(null);
@@ -81,7 +82,7 @@ const FeeImpactChart = () => {
     if (chartRef.current) {
       chartRef.current.destroy();
     }
-
+    Chart.register(CrosshairPlugin);
     chartRef.current = new Chart(canvasRef.current.getContext("2d"), {
       type: "line",
       data: {
@@ -110,7 +111,23 @@ const FeeImpactChart = () => {
       options: {
         responsive: true,
         plugins: {
+          crosshair: {
+            line: {
+              color: "#333",
+              width: 0.5,
+            },
+            sync: {
+              enable: false,
+            },
+            zoom: {
+              enabled: false,
+            },
+          },
+
           tooltip: {
+            enabled: true,
+            mode: "index",
+            intersect: false,
             callbacks: {
               title: (tooltipItem) => "Age: " + tooltipItem[0].label,
               label: (tooltipItem) => {
@@ -124,6 +141,11 @@ const FeeImpactChart = () => {
               },
             },
           },
+        },
+        hover: {
+          mode: "nearest",
+          intersect: false,
+          axis: "xy",
         },
 
         scales: {
@@ -287,7 +309,10 @@ const FeeImpactChart = () => {
                 className={classes.input}
                 type="text"
                 readOnly
-                value={results.totalContributions.toLocaleString()}
+                value={
+                  "$" +
+                  Number(results.totalContributions.toFixed(2)).toLocaleString()
+                }
               />
             </div>
             <p></p>
@@ -299,7 +324,10 @@ const FeeImpactChart = () => {
                 className={classes.input}
                 type="text"
                 readOnly
-                value={results.totalInterest.toLocaleString()}
+                value={
+                  "$" +
+                  Number(results.totalInterest.toFixed(2)).toLocaleString()
+                }
               />
             </div>
             <div className={classes.chartDescription}>
