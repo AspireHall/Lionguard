@@ -125,16 +125,19 @@ const FeeImpactChart = () => {
           },
 
           tooltip: {
+            padding: 30,
+            titleAlign: "left",
+            bodyAlign: "left",
             enabled: true,
-            mode: "index",
+
             intersect: false,
             callbacks: {
               title: (tooltipItem) => "Age: " + tooltipItem[0].label,
+
               label: (tooltipItem) => {
                 const i = tooltipItem.dataIndex;
-
                 return [
-                  `No Fees: $${Number(
+                  `No Fees:   $${Number(
                     dataNoFees[i].toFixed(2)
                   ).toLocaleString()}`,
                   `With Fees: $${Number(
