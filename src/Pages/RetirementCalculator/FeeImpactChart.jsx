@@ -134,9 +134,15 @@ const FeeImpactChart = () => {
                 const i = tooltipItem.dataIndex;
 
                 return [
-                  `No Fees: $${dataNoFees[i].toLocaleString()}`,
-                  `With Fees: $${dataWithFees[i].toFixed(2).toLocaleString()}`,
-                  `Difference: $${difference[i].toLocaleString()}`,
+                  `No Fees: $${Number(
+                    dataNoFees[i].toFixed(2)
+                  ).toLocaleString()}`,
+                  `With Fees: $${Number(
+                    dataWithFees[i].toFixed(2)
+                  ).toLocaleString()}`,
+                  `Difference: $${Number(
+                    difference[i].toFixed(2)
+                  ).toLocaleString()}`,
                 ];
               },
             },
