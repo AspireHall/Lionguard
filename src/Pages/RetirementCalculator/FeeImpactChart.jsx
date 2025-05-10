@@ -154,6 +154,7 @@ const FeeImpactChart = () => {
                 className={classes.input}
                 type="number"
                 id="currentAge"
+                placeholder={formData.currentAge}
                 value={formData.currentAge}
                 onChange={handleInputChange}
               />
@@ -284,6 +285,7 @@ const FeeImpactChart = () => {
                 value={results.totalContributions.toLocaleString()}
               />
             </div>
+            <p></p>
             <div className={classes.resultField}>
               <label className={classes.label}>
                 <strong>Total Interest Earned</strong>
@@ -326,6 +328,7 @@ const FeeImpactChart = () => {
                   }
                 />
               </div>
+              <p></p>
               <div className={classes.resultField}>
                 <label className={classes.label}>
                   <strong>Total Projected Account With Fees</strong>

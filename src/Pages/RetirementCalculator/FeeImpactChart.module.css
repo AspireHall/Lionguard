@@ -63,6 +63,7 @@
 }
 
 .formSection p {
+  margin-top: -5px;
   font-size: 14px;
   color: #333;
 }
@@ -97,6 +98,11 @@
   font-family: "Roboto";
 }
 
+.chartDescription {
+  padding: 30px;
+  text-align: center;
+}
+
 .chartResults {
   display: flex;
   flex-direction: column;
@@ -108,7 +114,7 @@
 
 .disclaimer {
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   font-style: italic;
   margin-top: 50px;
