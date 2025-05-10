@@ -1,4 +1,4 @@
-import "./FeeImpactChart.module.css";
+import classes from "./FeeImpactChart.module.css";
 import { useEffect, useRef, useState } from "react";
 import { Chart } from "chart.js/auto";
 
@@ -138,56 +138,74 @@ const FeeImpactChart = () => {
     });
   }, [formData]);
   return (
-    <div className="page-wrapper">
-      <header>
+    <div className={classes.pageWrapper}>
+      <header className={classes.header}>
         <h1>Financial Calculator</h1>
       </header>
-      <main>
-        <div className="form-section">
+      <main className={classes.main}>
+        <div className={classes.formSection}>
           <div className="space" style={{ marginTop: "69px" }}></div>
-          <form>
-            <label htmlFor="currentAge">Current Age</label>
+          <form className={classes.formSection}>
+            <label className={classes.label} htmlFor="currentAge">
+              Current Age
+            </label>
             <input
+              className={classes.input}
               type="number"
               id="currentAge"
               value={formData.currentAge}
               onChange={handleInputChange}
             />
             <p>Enter your current age to see the growth potential over time.</p>
-            <label htmlFor="retirementAge">Retirement Age</label>
+            <label className={classes.label} htmlFor="retirementAge">
+              Retirement Age
+            </label>
             <input
+              className={classes.input}
               type="number"
               id="retirementAge"
               value={formData.retirementAge}
               onChange={handleInputChange}
             />
             <p>Standard retirement age; you can adjust based on your plan.</p>
-            <label htmlFor="lumpSum">Initial Lump Sum ($)</label>
+            <label className={classes.label} htmlFor="lumpSum">
+              Initial Lump Sum ($)
+            </label>
             <input
+              className={classes.input}
               type="number"
               id="lumpSum"
               value={formData.lumpSum}
               onChange={handleInputChange}
             />
             <p>If none, leave at 0.</p>
-            <label htmlFor="monthly">Monthly Contributions ($)</label>
+            <label className={classes.label} htmlFor="monthly">
+              Monthly Contributions ($)
+            </label>
             <input
+              className={classes.input}
               type="number"
               id="monthly"
               value={formData.monthly}
               onChange={handleInputChange}
             />
             <p>Consistent contributions help build wealth over time.</p>
-            <label htmlFor="interestRate">Expected Annual Return (%)</label>
+            <label className={classes.label} htmlFor="interestRate">
+              Expected Annual Return (%)
+            </label>
             <input
+              className={classes.input}
               type="number"
               id="interestRate"
               value={formData.interestRate}
               onChange={handleInputChange}
             />
             <p>Adjust based on your target market return.</p>
-            <label htmlFor="fees">Management Fees (%)</label>
+            <label className={classes.label} htmlFor="fees">
+              Management Fees (%)
+            </label>
             <input
+              className={classes.input}
               type="number"
               id="fees"
               value={formData.fees}
@@ -196,31 +214,33 @@ const FeeImpactChart = () => {
             <p>1% is typical, but lower fees are better.</p>
           </form>
         </div>
-        <div className="results-section">
+        <div className={classes.resultsSection}>
           <h2>
             <strong>Results</strong>
           </h2>
-          <div className="result-field">
-            <label>
+          <div className={classes.resultField}>
+            <label className={classes.label}>
               <strong>Total Contributions</strong>
             </label>
             <input
+              className={classes.input}
               type="text"
               readOnly
               value={results.totalContributions.toLocaleString()}
             />
           </div>
-          <div className="result-field">
-            <label>
+          <div className={classes.resultField}>
+            <label className={classes.label}>
               <strong>Total Interest Earned</strong>
             </label>
             <input
+              className={classes.input}
               type="text"
               readOnly
               value={results.totalInterest.toLocaleString()}
             />
           </div>
-          <div className="chart-description">
+          <div className={classes.chartDescription}>
             Side-by-side comparison of your wealth with and without fees.
           </div>
           <div
@@ -237,10 +257,11 @@ const FeeImpactChart = () => {
           </div>
           <div className="chart-results">
             <div className="result-field">
-              <label>
+              <label className={classes.label}>
                 <strong>Total Projected Account Without Fees</strong>
               </label>
               <input
+                className={classes.input}
                 style={{ color: "green" }}
                 type="text"
                 readOnly
@@ -249,11 +270,12 @@ const FeeImpactChart = () => {
                 }
               />
             </div>
-            <div className="result-field">
-              <label>
+            <div className={classes.resultField}>
+              <label className={classes.label}>
                 <strong>Total Projected Account With Fees</strong>
               </label>
               <input
+                className={classes.input}
                 style={{ color: "red" }}
                 type="text"
                 readOnly
@@ -271,7 +293,7 @@ const FeeImpactChart = () => {
             style={{ color: "red" }}
             type="text"
             readOnly
-            className="total-fees-input"
+            className={classes.input}
             value={"$" + Number(results.totalFees.toFixed(2)).toLocaleString()}
           />
           <p>Total paid in fees over your contribution period.</p>
@@ -279,14 +301,14 @@ const FeeImpactChart = () => {
             <strong>Impact of Fees ($)</strong>
           </span>
           <input
+            className={classes.input}
             style={{ color: "red" }}
             type="text"
             readOnly
-            className="impact-of-fees"
             value={"$" + results.feeImpact.toLocaleString()}
           />
           <p>This includes both direct fees and lost compounding.</p>
-          <p className="disclaimer">
+          <p className={classes.disclaimer}>
             Educational Purposes Only: This premium financial calculator
             illustrates the power of compound growth. Projections are not
             guarantees. Use this as a planning tool.
