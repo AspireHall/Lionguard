@@ -4,14 +4,7 @@ const Footer = () => {
     <div className={classes.mainContainer}>
       <div className={classes.backgroundContainer}></div>
       <div className={classes.secondaryContainer}>
-        <div className={classes.leftContainer}>
-          <h1 className={classes.title}>Hours</h1>
-
-          <p className={classes.paragraph}>8am-5pm PST</p>
-          <p className={classes.paragraph}>
-            After hours by request appointment.
-          </p>
-        </div>
+        <div className={classes.leftContainer}></div>
         <div className={classes.middleContainer}>
           <h1 className={classes.title}>Protect your future</h1>
           <p className={classes.paragraph}>
