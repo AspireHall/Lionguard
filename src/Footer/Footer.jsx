@@ -6,7 +6,7 @@ const Footer = () => {
       <div className={classes.secondaryContainer}>
         <div className={classes.leftContainer}>
           <h1 className={classes.title}>Hours</h1>
-          <p className={classes.paragraph}>Monda-Friday</p>
+
           <p className={classes.paragraph}>8am-5pm PST</p>
           <p className={classes.paragraph}>
             After hours by request appointment.
