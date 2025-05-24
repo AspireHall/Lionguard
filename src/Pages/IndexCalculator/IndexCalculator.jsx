@@ -424,16 +424,16 @@ function IndexCalculator() {
               2YR
             </span>
             <input
-              type="number"
+              type="text"
               name="initial2"
               value={
                 isFocused
                   ? data.initial2.toString()
                   : "$" + data.initial2.toLocaleString()
               }
-              onChange={handleChange}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
+              onChange={handleChange}
             />
           </label>
 
