@@ -142,7 +142,9 @@ th {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
   height: auto;
 }
 .chartHeading {
@@ -150,7 +152,7 @@ th {
   margin-top: 40px;
 }
 .chart {
-  width: 900px;
+  width: 100%;
 }
 canvas {
   display: block;
