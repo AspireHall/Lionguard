@@ -125,7 +125,7 @@ function IndexCalculator() {
     const { name, value } = e.target;
     setData((prev) => ({
       ...prev,
-      [name]: parseFloat(value) || 0,
+      [name]: value || 0,
     }));
   };
 
@@ -344,35 +344,37 @@ function IndexCalculator() {
       <div className={classes.calculatorContainer}>
         <div className={classes.standardIndexContainer}>
           <h3>Standard Index</h3>
-
-          <label>
-            Standard Index:
-            <select
-              className={classes.indexSelector}
-              name="standardIndex"
-              value={data.standardIndex}
-              onChange={handleChange}
-            >
-              <option value="sp500">S&P 500</option>
-              <option value="nasdaq">NASDAQ-100</option>
-            </select>
-          </label>
-
-          <label>
-            Initial Balance ($):{" "}
-            <input
-              type="text"
-              name="initial1"
-              value={
-                isFocused
-                  ? data.initial1.toString()
-                  : "$" + data.initial1.toLocaleString()
-              }
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-              onChange={handleChange}
-            />
-          </label>
+          <div>
+            <label>
+              Standard Index:
+              <select
+                className={classes.indexSelector}
+                name="standardIndex"
+                value={data.standardIndex}
+                onChange={handleChange}
+              >
+                <option value="sp500">S&P 500</option>
+                <option value="nasdaq">NASDAQ-100</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label>
+              Initial Balance ($):{" "}
+              <input
+                type="text"
+                name="initial1"
+                value={
+                  isFocused
+                    ? data.initial1.toString()
+                    : "$" + data.initial1.toLocaleString()
+                }
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
 
           <label>
             Annual Withdrawal Rate (%):{" "}
@@ -424,8 +426,14 @@ function IndexCalculator() {
             <input
               type="number"
               name="initial2"
-              value={data.initial2}
+              value={
+                isFocused
+                  ? data.initial2.toString()
+                  : "$" + data.initial2.toLocaleString()
+              }
               onChange={handleChange}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
             />
           </label>
 
