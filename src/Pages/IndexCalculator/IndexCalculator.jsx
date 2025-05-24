@@ -205,22 +205,6 @@ function IndexCalculator() {
       c2.push(b2No.toFixed(2));
     }
 
-    t1.push({
-      year: "Avg",
-      return: r1Total / years.length,
-      balance: b1,
-      withdrawn: w1Total,
-      noWithdraw: b1No,
-    });
-
-    t2.push({
-      year: "Avg",
-      return: r2Total / years.length,
-      balance: b2,
-      withdrawn: w2Total,
-      noWithdraw: b2No,
-    });
-
     setTable1(t1);
     setTable2(t2);
     setChartData({
