@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import classes from "./IndexCalculator.module.css";
-import Chart from "chart.js/auto";
 import Switch from "@mui/material/Switch";
-
 import PrintIcon from "@mui/icons-material/Print";
+import { Line } from "react-chartjs-2";
 
 import {
   Chart as ChartJS,
@@ -113,6 +112,7 @@ function IndexCalculator() {
   const [table1, setTable1] = useState([]);
   const [table2, setTable2] = useState([]);
   const [chartData, setChartData] = useState({});
+  console.log(chartData);
 
   useEffect(() => {
     if (isChecked ? runCalculationTwo() : runCalculations());
@@ -310,7 +310,7 @@ function IndexCalculator() {
     t2.push({
       year: "Avg",
       return: r2Total / years.length,
-      balance: b2.toLocaleString(2),
+      balance: b2,
       withdrawn: w2Total,
       noWithdraw: b2No,
     });
@@ -522,20 +522,23 @@ function IndexCalculator() {
                   </td>
                   <td>
                     $
-                    {row.balance.toLocaleString(undefined, {
-                      maximumFractionDigits: 0,
+                    {Number(row.balance.toFixed(2)).toLocaleString(undefined, {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
                     })}
                   </td>
                   <td>
                     $
                     {row.withdrawn.toLocaleString(undefined, {
-                      maximumFractionDigits: 0,
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
                     })}
                   </td>
                   <td>
                     $
                     {row.noWithdraw.toLocaleString(undefined, {
-                      maximumFractionDigits: 0,
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
                     })}
                   </td>
                 </tr>
@@ -545,10 +548,12 @@ function IndexCalculator() {
                   <th>Average Return</th>
                   <td>{(table.at(-1).return * 100).toFixed(2)}%</td>
                   <td>
-                    Total Withdrawn: ${table.at(-1).withdrawn.toLocaleString()}
+                    Total Withdrawn: $
+                    {Number(table.at(-1).withdrawn.toFixed(2)).toLocaleString()}
                   </td>
                   <td colSpan="2">
-                    Final Balance: ${table.at(-1).balance.toLocaleString()}
+                    Final Balance: $
+                    {Number(table.at(-1).balance.toFixed(2)).toLocaleString()}
                   </td>
                 </tr>
               )}
@@ -556,9 +561,14 @@ function IndexCalculator() {
           </table>
         ))}
       </div>
-
-      <h3 className={classes.chartHeading}>Growth Comparison Chart</h3>
-      <canvas id={chartData}> {/*<Line data={chartData} />*/}</canvas>
+      <div className={classes.chartContainer}>
+        <div className={classes.chart}>
+          <h3 className={classes.chartHeading}>Growth Comparison Chart</h3>
+          {chartData.labels && chartData.datasets?.length > 0 && (
+            <Line data={chartData} />
+          )}
+        </div>
+      </div>
       <p className={classes.disclaimer}>
         Disclaimer: This calculator uses historical data from 1998–2024. Past
         performance does not guarantee future results. This is for educational
