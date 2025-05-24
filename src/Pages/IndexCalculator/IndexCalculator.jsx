@@ -268,8 +268,8 @@ function IndexCalculator() {
     const adjustedReturns = calculate2YearReturns(
       returns,
       data.capRate,
-      data.floorRate,
-      data.participationRate
+      data.floorRate / 100,
+      data.participationRate / 100
     );
     const years = Object.keys(adjustedReturns);
 
