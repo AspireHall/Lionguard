@@ -313,6 +313,72 @@ function IndexCalculator() {
     });
   };
 
+  const runCalculationThree = () => {
+    const returns = getReturns();
+    const adjustedReturns = calculate2YearReturns(
+      returns,
+      data.capRate,
+      data.floorRate / 100,
+      data.participationRate / 100
+    );
+    const years = Object.keys(adjustedReturns);
+
+    let { initial2, withdrawalRate2, feeRate2, contribution2 } = data;
+
+    withdrawalRate2 /= 100;
+    feeRate2 /= 100;
+
+    let b2 = initial2,
+      b2No = initial2;
+
+    let t2 = [],
+      c2 = [];
+
+    let w2Total = 0,
+      r2Total = 0;
+
+    for (let y of years) {
+      let adjR = adjustedReturns[y];
+
+      const w2 = b2 * withdrawalRate2;
+      b2 = (b2 - w2 + contribution2) * (1 - feeRate2) * (1 + adjR);
+      b2No = (b2No + contribution2) * (1 + adjR);
+      w2Total += w2;
+      r2Total += adjR;
+
+      t2.push({
+        year: y,
+        return: adjR,
+        balance: b2,
+        withdrawn: w2,
+        noWithdraw: b2No,
+      });
+
+      c2.push(b2No.toFixed(2));
+    }
+
+    t2.push({
+      year: "Avg",
+      return: r2Total / years.length,
+      balance: b2,
+      withdrawn: w2Total,
+      noWithdraw: b2No,
+    });
+
+    setTable2(t2);
+    setChartData({
+      labels: years,
+      datasets: [
+        {
+          label: "Cap + Floor Strategy",
+          data: c2,
+          borderColor: "orange",
+          fill: false,
+        },
+      ],
+    });
+  };
+
   return (
     <div className={classes.root}>
       <div className={classes.header}>
