@@ -8,6 +8,7 @@ import XIcon from "@mui/icons-material/X";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import CardTravelIcon from "@mui/icons-material/CardTravel";
 import CalculateIcon from "@mui/icons-material/Calculate";
+import CalculateOutlinedIcon from "@mui/icons-material/CalculateOutlined";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
@@ -15,6 +16,34 @@ import "./Navbar.css";
 import { Button, Menu, MenuItem } from "@mui/material";
 
 const Navbar = () => {
+  const PaperProps = {
+    sx: {
+      backgroundColor: "rgb(31, 99, 183)",
+      borderColor: "white",
+      borderStyle: "solid",
+      borderRadius: "10px",
+      borderWidth: "1px",
+      height: "280px",
+      display: "flex",
+      justifyContent: "center",
+      width: "250px",
+    },
+  };
+  const PaperProps2 = {
+    sx: {
+      backgroundColor: "rgb(31, 99, 183)",
+      borderColor: "white",
+      borderStyle: "solid",
+      borderRadius: "10px",
+      borderWidth: "1px",
+      height: "100px",
+      display: "flex",
+      paddingLeft: "15px",
+      justifyContent: "center",
+      width: "250px",
+    },
+  };
+
   const sx = {
     color: "white",
     marginRight: "10px",
@@ -64,6 +93,25 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const [anchorEl2, setAnchorEl2] = useState(null);
+  const open2 = Boolean(anchorEl2);
+  const handleClick2 = (event) => {
+    setAnchorEl2(event.currentTarget);
+  };
+  const handleClose2 = () => {
+    setAnchorEl2(null);
+  };
+
+  /* cosnt[(anchorOption, setAnchorOption)] = useState(null);
+  const openOption = Boolean(anchorEl);
+  const handleOptionClick = (event) => {
+    setAnchorOption(event.currentTarget);
+  };
+  const handleOptionClick = () => {
+    setAnchorOption(null);
+  };
+  */
+
   return (
     <div className={classes.mainContainer}>
       <div className={`navbar ${navbarScrolled ? "scrolled" : ""}`}>
@@ -108,19 +156,7 @@ const Navbar = () => {
               vertical: "top",
               horizontal: "center",
             }}
-            PaperProps={{
-              sx: {
-                backgroundColor: "rgb(31, 99, 183)",
-                borderColor: "white",
-                borderStyle: "solid",
-                borderRadius: "10px",
-                borderWidth: "1px",
-                height: "280px",
-                display: "flex",
-                justifyContent: "center",
-                width: "250px",
-              },
-            }}
+            PaperProps={PaperProps}
           >
             <MenuItem onClick={handleClose} sx={menusx}>
               <HealthAndSafetyIcon sx={{ color: "white" }} />
@@ -139,6 +175,12 @@ const Navbar = () => {
               <CalculateIcon sx={{ color: "white" }} /> &nbsp;
               <Link className={classes.dropMenuFont} to="/calculator">
                 Calculator
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose} sx={menusx}>
+              <CalculateIcon sx={{ color: "white" }} /> &nbsp;
+              <Link className={classes.dropMenuFont} to="/indexcalculator">
+                IndexCalculator
               </Link>
             </MenuItem>
             <MenuItem onClick={handleClose} sx={menusx}>
@@ -183,10 +225,67 @@ const Navbar = () => {
             Annuities
             <KeyboardArrowDownIcon />
           </Link>
-          <Link className={classes.menuFont} to="/calculator">
-            Calculator
-            <KeyboardArrowDownIcon />
-          </Link>
+          <Button
+            style={{
+              marginLeft: "30px",
+              marginRight: "30px",
+              paddingTop: "7.5px",
+              color: "white",
+              textTransform: "none",
+              fontFamily: "initial",
+              fontSize: "18px",
+            }}
+            id="demo-positioned-button"
+            aria-controls={open2 ? "demo-positioned-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open2 ? "true" : undefined}
+            onMouseEnter={handleClick2}
+          >
+            Calculator <KeyboardArrowDownIcon />
+          </Button>
+          <Menu
+            id="demo-positioned-menu"
+            aria-labelledby="demo-positioned-button"
+            anchorEl={anchorEl2}
+            open={open2}
+            onClose={handleClose2}
+            MenuListProps={{
+              onMouseLeave: handleClose2,
+            }}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "center",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "center",
+            }}
+            PaperProps={PaperProps2}
+          >
+            <MenuItem>
+              <Link
+                className={classes.menuFont}
+                style={{ position: "relative", zIndex: "1" }}
+                onClick={handleClose2}
+                to="/calculator"
+              >
+                <CalculateIcon />
+                &nbsp; Compound Calculator
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link
+                className={classes.menuFont}
+                style={{ position: "relative", zIndex: "1" }}
+                onClick={handleClose2}
+                to="/indexCalculator"
+              >
+                <CalculateOutlinedIcon />
+                &nbsp; Index Calculator
+              </Link>
+            </MenuItem>
+          </Menu>
+
           <Link className={classes.menuFont} to="/livingTrust">
             Living Trust
             <KeyboardArrowDownIcon />

@@ -9,6 +9,7 @@ import AnnuitiesPage from "./Pages/AnnuitiesPage/AnnuitiesPage";
 import LivingTrustPage from "./Pages/LivingTrustPage/LivingTrustPage";
 import ContactPage from "./Pages/ContactPage/ContactPage";
 import FeeImpactChart from "./Pages/RetirementCalculator/FeeImpactChart";
+import IndexCalculator from "./Pages/IndexCalculator/IndexCalculator";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="lifeInsurance" element={<LifeInsurancePage />} />
         <Route path="annuities" element={<AnnuitiesPage />} />
         <Route path="calculator" element={<FeeImpactChart />} />
+        <Route path="indexCalculator" element={<IndexCalculator />} />
         <Route path="livingTrust" element={<LivingTrustPage />} />
         <Route path="contact" element={<ContactPage />} />
       </Routes>
