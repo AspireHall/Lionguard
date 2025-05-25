@@ -115,7 +115,7 @@ function IndexCalculator() {
   console.log(chartData);
 
   useEffect(() => {
-    if (isChecked ? runCalculationTwo() : runCalculations());
+    if (isChecked ? runCalculationThree() : runCalculations());
   }, [data, isChecked]);
 
   const getReturns = () =>
@@ -318,6 +318,122 @@ function IndexCalculator() {
     setChartData({
       labels: years,
       datasets: [
+        {
+          label: "Cap + Floor Strategy",
+          data: c2,
+          borderColor: "orange",
+          fill: false,
+        },
+      ],
+    });
+  };
+
+  const runCalculationThree = () => {
+    const returns = getReturns();
+    const adjustedReturns = calculate2YearReturns(
+      returns,
+      data.capRate,
+      data.floorRate / 100,
+      data.participationRate / 100
+    );
+    const years = Object.keys(adjustedReturns);
+
+    let {
+      initial1,
+      withdrawalRate1,
+      feeRate1,
+      contribution1,
+      initial2,
+      withdrawalRate2,
+      feeRate2,
+
+      contribution2,
+    } = data;
+
+    withdrawalRate1 /= 100;
+    feeRate1 /= 100;
+    withdrawalRate2 /= 100;
+    feeRate2 /= 100;
+
+    let b1 = initial1,
+      b1No = initial1,
+      b2 = initial2,
+      b2No = initial2;
+
+    let t1 = [],
+      t2 = [],
+      c1 = [],
+      c2 = [];
+
+    let w1Total = 0,
+      w2Total = 0,
+      r1Total = 0,
+      r2Total = 0;
+
+    for (let y of years) {
+      let adjR = adjustedReturns[y];
+
+      const w2 = b2 * withdrawalRate2;
+      b2 = (b2 - w2 + contribution2) * (1 - feeRate2) * (1 + adjR);
+      b2No = (b2No + contribution2) * (1 + adjR);
+      w2Total += w2;
+      r2Total += adjR;
+
+      t2.push({
+        year: y,
+        return: adjR,
+        balance: b2,
+        withdrawn: w2,
+        noWithdraw: b2No,
+      });
+
+      c2.push(b2No.toFixed(2));
+    }
+
+    for (let y of years) {
+      let r = returns[y] / 100;
+      const w1 = b1 * withdrawalRate1;
+      b1 = (b1 - w1 + contribution1) * (1 - feeRate1) * (1 + r);
+      b1No = (b1No + contribution1) * (1 + r);
+      w1Total += w1;
+      r1Total += r;
+
+      t1.push({
+        year: y,
+        return: r,
+        balance: b1,
+        withdrawn: w1,
+        noWithdraw: b1No,
+      });
+
+      c1.push(b1No.toFixed(2));
+    }
+
+    t1.push({
+      year: "Avg",
+      return: r1Total / years.length,
+      balance: b1,
+      withdrawn: w1Total,
+      noWithdraw: b1No,
+    });
+    t2.push({
+      year: "Avg",
+      return: r2Total / years.length,
+      balance: b2,
+      withdrawn: w2Total,
+      noWithdraw: b2No,
+    });
+    setTable1(t1);
+    setTable2(t2);
+    setChartData({
+      labels: years,
+      datasets: [
+        {
+          label: "Standard Strategy",
+          data: c1,
+          borderColor: "green",
+          fill: false,
+        },
         {
           label: "Cap + Floor Strategy",
           data: c2,
