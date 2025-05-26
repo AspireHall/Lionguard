@@ -35,6 +35,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 .standardIndexContainer {
   flex: 1;
@@ -88,6 +90,8 @@ input:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 .tableContainer {
   flex: 1;
@@ -128,7 +132,6 @@ th {
   color: white;
   font-weight: 600;
   font-size: 16px;
-  padding: 10px;
 }
 .stripedTable tr:nth-child(even) {
   background-color: #f9f9f9;
@@ -153,7 +156,16 @@ th {
 }
 .chart {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+@media print {
+  .chart {
+    height: auto !important;
+    width: 100% !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+  }
 }
 canvas {
   display: block;

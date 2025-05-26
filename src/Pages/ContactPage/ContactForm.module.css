@@ -47,8 +47,8 @@
   height: 35px;
   display: flex;
   justify-content: center;
-  padding-left: 2%;
-  border-radius: 20px;
+  padding-left: 10px;
+  border-radius: 10px;
   border: solid 1px black;
   font-family: "Lato";
   font-size: 16px;
@@ -63,8 +63,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding: 10px;
   border-radius: 20px;
   border: solid 1px black;
   font-family: "Lato";
@@ -76,9 +75,9 @@
   width: 100px;
   color: white;
   font-size: 18px;
-  background-color: rgb(8, 44, 89);
-  border: solid 1px black;
-  border-radius: 50px;
+  background: rgb(8, 44, 89);
+  border: solid 1px rgb(62, 141, 237);
+  border-radius: 10px;
 }
 .submitBtn:hover {
   background-color: rgb(5, 86, 184);

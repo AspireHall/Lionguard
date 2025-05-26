@@ -25,6 +25,11 @@ ChartJS.register(
   Legend
 );
 
+const options = {
+  responsive: true,
+  maintainAspectRatio: false,
+};
+
 const sp500Returns = {
   1998: 26.67,
   1999: 19.53,
@@ -677,10 +682,10 @@ function IndexCalculator() {
         ))}
       </div>
       <div className={classes.chartContainer}>
+        <h3 className={classes.chartHeading}>Growth Comparison Chart</h3>
         <div className={classes.chart}>
-          <h3 className={classes.chartHeading}>Growth Comparison Chart</h3>
           {chartData.labels && chartData.datasets?.length > 0 && (
-            <Line data={chartData} />
+            <Line data={chartData} options={options} />
           )}
         </div>
       </div>
