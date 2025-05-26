@@ -626,7 +626,7 @@ function IndexCalculator() {
             <thead>
               <tr>
                 <th>Year</th>
-                <th>{idx === 0 ? "Return (%)" : "Capped Return (%)"}</th>
+                <th>{idx === 0 ? "Return (%)" : "Return (%)"}</th>
                 <th>Balance (With Withdrawal)</th>
                 <th>Withdrawn</th>
                 <th>Balance (No Withdrawal)</th>
