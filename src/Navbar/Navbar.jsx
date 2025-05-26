@@ -13,7 +13,7 @@ import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import "./Navbar.css";
-import { Button, Menu, MenuItem } from "@mui/material";
+import { Button, Menu, MenuItem, Typography } from "@mui/material";
 
 const Navbar = () => {
   const PaperProps = {

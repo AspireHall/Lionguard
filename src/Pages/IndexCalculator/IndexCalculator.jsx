@@ -206,7 +206,7 @@ function IndexCalculator() {
     }
 
     t1.push({
-      year: "Avg",
+      year: "Average Return",
       return: r1Total / years.length,
       balance: b1,
       withdrawn: w1Total,
@@ -214,7 +214,7 @@ function IndexCalculator() {
     });
 
     t2.push({
-      year: "Avg",
+      year: "Average Return",
       return: r2Total / years.length,
       balance: b2,
       withdrawn: w2Total,
@@ -410,14 +410,14 @@ function IndexCalculator() {
     }
 
     t1.push({
-      year: "Avg",
+      year: "Average Return",
       return: r1Total / years.length,
       balance: b1,
       withdrawn: w1Total,
       noWithdraw: b1No,
     });
     t2.push({
-      year: "Avg",
+      year: "Average Return",
       return: r2Total / years.length,
       balance: b2,
       withdrawn: w2Total,
@@ -660,7 +660,7 @@ function IndexCalculator() {
               ))}
               {table.length > 0 && (
                 <tr>
-                  <th>Average Return</th>
+                  <th>Summary</th>
                   <td>{(table.at(-1).return * 100).toFixed(2)}%</td>
                   <td>
                     Total Withdrawn: $
