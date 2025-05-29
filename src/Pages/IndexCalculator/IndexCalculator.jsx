@@ -451,249 +451,259 @@ function IndexCalculator() {
 
   return (
     <div className={classes.root}>
-      <div className={classes.header}>
-        <h2>Lionguard Financial Index Calculator</h2>
-      </div>
+      <div className={classes.mainContainer}>
+        <div className={classes.header}>
+          <h2>Lionguard Financial Index Calculator</h2>
+        </div>
 
-      <div className={classes.printContainer}>
-        <button className={classes.printButton} onClick={() => window.print()}>
-          <PrintIcon /> Print / Save PDF
-        </button>
-      </div>
+        <div className={classes.printContainer}>
+          <button
+            className={classes.printButton}
+            onClick={() => window.print()}
+          >
+            <PrintIcon /> Print / Save PDF
+          </button>
+        </div>
 
-      <div className={classes.calculatorContainer}>
-        <div className={classes.standardIndexContainer}>
-          <h3>Standard Index</h3>
-          <div>
+        <div className={classes.calculatorContainer}>
+          <div className={classes.standardIndexContainer}>
+            <h3>Standard Index</h3>
+            <div>
+              <label>
+                Standard Index:
+                <select
+                  className={classes.indexSelector}
+                  name="standardIndex"
+                  value={data.standardIndex}
+                  onChange={handleChange}
+                >
+                  <option value="sp500">S&P 500</option>
+                  <option value="nasdaq">NASDAQ-100</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <label>
+                Initial Balance ($):{" "}
+                <input
+                  type="text"
+                  name="initial1"
+                  value={
+                    isFocused
+                      ? data.initial1.toString()
+                      : "$" + data.initial1.toLocaleString()
+                  }
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(false)}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
+
             <label>
-              Standard Index:
-              <select
-                className={classes.indexSelector}
-                name="standardIndex"
-                value={data.standardIndex}
+              Annual Withdrawal Rate (%):{" "}
+              <input
+                type="number"
+                name="withdrawalRate1"
+                value={data.withdrawalRate1}
                 onChange={handleChange}
-              >
-                <option value="sp500">S&P 500</option>
-                <option value="nasdaq">NASDAQ-100</option>
-              </select>
+              />
             </label>
-          </div>
-          <div>
+
             <label>
-              Initial Balance ($):{" "}
+              Annual Fee (%):{" "}
+              <input
+                type="number"
+                name="feeRate1"
+                value={data.feeRate1}
+                onChange={handleChange}
+              />
+            </label>
+
+            <label>
+              Yearly Contribution ($):{" "}
               <input
                 type="text"
-                name="initial1"
+                name="contribution1"
                 value={
                   isFocused
-                    ? data.initial1.toString()
-                    : "$" + data.initial1.toLocaleString()
+                    ? data.contribution1.toString()
+                    : "$" + data.contribution1.toLocaleString()
+                }
+                onChange={handleChange}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
+              />
+            </label>
+          </div>
+
+          <div className={classes.participationContainer}>
+            <h3>Cap + Participation Strategy</h3>
+
+            <label>
+              Initial Balance ($):
+              <span style={{ marginLeft: "20px" }}>
+                1YR
+                <Switch checked={isChecked} onChange={isCheckedHandler} />
+                2YR
+              </span>
+              <input
+                type="text"
+                name="initial2"
+                value={
+                  isFocused
+                    ? data.initial2.toString()
+                    : "$" + data.initial2.toLocaleString()
                 }
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
                 onChange={handleChange}
               />
             </label>
-          </div>
 
-          <label>
-            Annual Withdrawal Rate (%):{" "}
-            <input
-              type="number"
-              name="withdrawalRate1"
-              value={data.withdrawalRate1}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            Annual Fee (%):{" "}
-            <input
-              type="number"
-              name="feeRate1"
-              value={data.feeRate1}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            Yearly Contribution ($):{" "}
-            <input
-              type="text"
-              name="contribution1"
-              value={
-                isFocused
-                  ? data.contribution1.toString()
-                  : "$" + data.contribution1.toLocaleString()
-              }
-              onChange={handleChange}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-            />
-          </label>
-        </div>
-
-        <div className={classes.participationContainer}>
-          <h3>Cap + Participation Strategy</h3>
-
-          <label>
-            Initial Balance ($):
-            <span style={{ marginLeft: "20px" }}>
-              1YR
-              <Switch checked={isChecked} onChange={isCheckedHandler} />
-              2YR
-            </span>
-            <input
-              type="text"
-              name="initial2"
-              value={
-                isFocused
-                  ? data.initial2.toString()
-                  : "$" + data.initial2.toLocaleString()
-              }
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            Annual Withdrawal Rate (%):{" "}
-            <input
-              type="number"
-              name="withdrawalRate2"
-              value={data.withdrawalRate2}
-              onChange={handleChange}
-            />
-          </label>
-
-          <label>
-            Annual Fee/Charge (%):{" "}
-            <input
-              type="number"
-              name="feeRate2"
-              value={data.feeRate2}
-              onChange={handleChange}
-            />
-          </label>
-          <div style={{ display: "flex" }}>
             <label>
-              Participation Rate (%):{" "}
+              Annual Withdrawal Rate (%):{" "}
               <input
                 type="number"
-                name="participationRate"
-                value={data.participationRate}
+                name="withdrawalRate2"
+                value={data.withdrawalRate2}
                 onChange={handleChange}
               />
             </label>
 
             <label>
-              Cap on Returns (%):{" "}
+              Annual Fee/Charge (%):{" "}
               <input
                 type="number"
-                name="capRate"
-                value={data.capRate}
+                name="feeRate2"
+                value={data.feeRate2}
                 onChange={handleChange}
               />
             </label>
+            <div style={{ display: "flex" }}>
+              <label>
+                Participation Rate (%):{" "}
+                <input
+                  type="number"
+                  name="participationRate"
+                  value={data.participationRate}
+                  onChange={handleChange}
+                />
+              </label>
+
+              <label>
+                Cap on Returns (%):{" "}
+                <input
+                  type="number"
+                  name="capRate"
+                  value={data.capRate}
+                  onChange={handleChange}
+                />
+              </label>
+
+              <label>
+                Floor on Returns (%):{" "}
+                <input
+                  type="number"
+                  name="floorRate"
+                  value={data.floorRate}
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
 
             <label>
-              Floor on Returns (%):{" "}
+              Yearly Contribution ($):{" "}
               <input
                 type="number"
-                name="floorRate"
-                value={data.floorRate}
+                name="contribution2"
+                value={data.contribution2}
                 onChange={handleChange}
               />
             </label>
           </div>
-
-          <label>
-            Yearly Contribution ($):{" "}
-            <input
-              type="number"
-              name="contribution2"
-              value={data.contribution2}
-              onChange={handleChange}
-            />
-          </label>
         </div>
-      </div>
 
-      <div className={classes.resultsContainer}>
-        {[table1, table2].map((table, idx) => (
-          <table className={classes.tableContainer} key={idx}>
-            <thead>
-              <tr>
-                <th>Year</th>
-                <th>{idx === 0 ? "Return (%)" : "Return (%)"}</th>
-                <th>Balance (With Withdrawal)</th>
-                <th>Withdrawn</th>
-                <th>Balance (No Withdrawal)</th>
-              </tr>
-            </thead>
-
-            <tbody className={classes.stripedTable}>
-              {table.map((row, i) => (
-                <tr key={i}>
-                  <td>{row.year}</td>
-                  <td style={{ color: row.return > 0 ? "green" : "red" }}>
-                    {(row.return * 100).toFixed(2)}
-                  </td>
-                  <td>
-                    $
-                    {Number(row.balance.toFixed(2)).toLocaleString(undefined, {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
-                  </td>
-                  <td>
-                    $
-                    {row.withdrawn.toLocaleString(undefined, {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
-                  </td>
-                  <td>
-                    $
-                    {row.noWithdraw.toLocaleString(undefined, {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
-                  </td>
-                </tr>
-              ))}
-              {table.length > 0 && (
+        <div className={classes.resultsContainer}>
+          {[table1, table2].map((table, idx) => (
+            <table className={classes.tableContainer} key={idx}>
+              <thead>
                 <tr>
-                  <th>Summary</th>
-                  <td>{(table.at(-1).return * 100).toFixed(2)}%</td>
-                  <td>
-                    Total Withdrawn: $
-                    {Number(table.at(-1).withdrawn.toFixed(2)).toLocaleString()}
-                  </td>
-                  <td colSpan="2">
-                    Final Balance: $
-                    {Number(table.at(-1).balance.toFixed(2)).toLocaleString()}
-                  </td>
+                  <th>Year</th>
+                  <th>{idx === 0 ? "Return (%)" : "Return (%)"}</th>
+                  <th>Balance (With Withdrawal)</th>
+                  <th>Withdrawn</th>
+                  <th>Balance (No Withdrawal)</th>
                 </tr>
-              )}
-            </tbody>
-          </table>
-        ))}
-      </div>
-      <div className={classes.chartContainer}>
-        <h3 className={classes.chartHeading}>Growth Comparison Chart</h3>
-        <div className={classes.chart}>
-          {chartData.labels && chartData.datasets?.length > 0 && (
-            <Line data={chartData} options={options} />
-          )}
+              </thead>
+
+              <tbody className={classes.stripedTable}>
+                {table.map((row, i) => (
+                  <tr key={i}>
+                    <td>{row.year}</td>
+                    <td style={{ color: row.return > 0 ? "green" : "red" }}>
+                      {(row.return * 100).toFixed(2)}
+                    </td>
+                    <td>
+                      $
+                      {Number(row.balance.toFixed(2)).toLocaleString(
+                        undefined,
+                        {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        }
+                      )}
+                    </td>
+                    <td>
+                      $
+                      {row.withdrawn.toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}
+                    </td>
+                    <td>
+                      $
+                      {row.noWithdraw.toLocaleString(undefined, {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}
+                    </td>
+                  </tr>
+                ))}
+                {table.length > 0 && (
+                  <tr>
+                    <th>Summary</th>
+                    <td>{(table.at(-1).return * 100).toFixed(2)}%</td>
+                    <td>
+                      Total Withdrawn: $
+                      {Number(
+                        table.at(-1).withdrawn.toFixed(2)
+                      ).toLocaleString()}
+                    </td>
+                    <td colSpan="2">
+                      Final Balance: $
+                      {Number(table.at(-1).balance.toFixed(2)).toLocaleString()}
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          ))}
         </div>
+        <div className={classes.chartContainer}>
+          <h3 className={classes.chartHeading}>Growth Comparison Chart</h3>
+          <div className={classes.chart}>
+            {chartData.labels && chartData.datasets?.length > 0 && (
+              <Line data={chartData} options={options} />
+            )}
+          </div>
+        </div>
+        <p className={classes.disclaimer}>
+          Disclaimer: This calculator uses historical data from 1998–2024. Past
+          performance does not guarantee future results. This is for educational
+          use only.
+        </p>
       </div>
-      <p className={classes.disclaimer}>
-        Disclaimer: This calculator uses historical data from 1998–2024. Past
-        performance does not guarantee future results. This is for educational
-        use only.
-      </p>
     </div>
   );
 }
