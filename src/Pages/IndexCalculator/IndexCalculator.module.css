@@ -102,8 +102,7 @@ input:focus {
   flex-wrap: wrap;
 }
 .tableContainer {
-  width: 100%;
-  flex: 1;
+  width: 49%;
   margin-left: 0.5%;
   margin-right: 0.5%;
   background: white;
