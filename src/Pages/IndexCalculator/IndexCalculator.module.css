@@ -102,7 +102,7 @@ input:focus {
   flex-wrap: wrap;
 }
 .tableContainer {
-  width: 49%;
+  flex: 2;
   margin-left: 0.5%;
   margin-right: 0.5%;
   background: white;
@@ -115,7 +115,6 @@ table {
   border-collapse: collapse;
   background: white;
   border-radius: 8px;
-  overflow: hidden;
   transition: background 0.3s, color 0.3s;
 }
 body.dark-mode table {
