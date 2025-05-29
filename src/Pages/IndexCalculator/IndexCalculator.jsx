@@ -119,6 +119,14 @@ function IndexCalculator() {
   const [chartData, setChartData] = useState({});
   console.log(chartData);
 
+  window.addEventListener("load", () => {
+    chartData.resize();
+  });
+
+  window.addEventListener("resize", () => {
+    chartData.resize();
+  });
+
   useEffect(() => {
     if (isChecked ? runCalculationThree() : runCalculations());
   }, [data, isChecked]);
