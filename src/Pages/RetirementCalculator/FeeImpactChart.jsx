@@ -23,6 +23,7 @@ const FeeImpactChart = () => {
     finalWithFees: 0,
     totalFees: 0,
     feeImpact: "",
+    finalContribution: 0,
   });
 
   const handleInputChange = (e) => {
@@ -68,6 +69,7 @@ const FeeImpactChart = () => {
     const feeImpactPercentage = (feeImpactValue / finalNoFees) * 100;
 
     setResults({
+      finalContribution: totalContributions + lumpSum,
       totalContributions,
       totalInterest: finalNoFees - totalContributions,
       finalNoFees,
@@ -320,7 +322,7 @@ const FeeImpactChart = () => {
                 readOnly
                 value={
                   "$" +
-                  Number(results.totalContributions.toFixed(2)).toLocaleString()
+                  Number(results.finalContribution.toFixed(2)).toLocaleString()
                 }
               />
             </div>

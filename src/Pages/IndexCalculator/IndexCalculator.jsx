@@ -104,8 +104,8 @@ function IndexCalculator() {
     initial2: 1000000,
     withdrawalRate2: 0,
     feeRate2: 0,
-    participationRate: 100,
-    capRate: 10,
+    participationRate: 60,
+    capRate: 100,
     floorRate: 0,
     contribution2: 0,
   });
@@ -275,7 +275,7 @@ function IndexCalculator() {
     return result;
   };
 
-  const runCalculationTwo = () => {
+  /*  const runCalculationTwo = () => {
     const returns = getReturns();
     const adjustedReturns = calculate2YearReturns(
       returns,
@@ -340,6 +340,7 @@ function IndexCalculator() {
       ],
     });
   };
+  */
 
   const runCalculationThree = () => {
     const returns = getReturns();
@@ -544,10 +545,8 @@ function IndexCalculator() {
               />
             </label>
           </div>
-
           <div className={classes.participationContainer}>
             <h3>Cap + Participation Strategy</h3>
-
             <label>
               Initial Balance ($):
               <span style={{ marginLeft: "20px" }}>
@@ -568,7 +567,6 @@ function IndexCalculator() {
                 onChange={handleChange}
               />
             </label>
-
             <label>
               Annual Withdrawal Rate (%):{" "}
               <input
@@ -578,7 +576,6 @@ function IndexCalculator() {
                 onChange={handleChange}
               />
             </label>
-
             <label>
               Annual Fee/Charge (%):{" "}
               <input
@@ -598,7 +595,6 @@ function IndexCalculator() {
                   onChange={handleChange}
                 />
               </label>
-
               <label>
                 Cap on Returns (%):{" "}
                 <input
@@ -608,7 +604,6 @@ function IndexCalculator() {
                   onChange={handleChange}
                 />
               </label>
-
               <label>
                 Floor on Returns (%):{" "}
                 <input
@@ -619,19 +614,23 @@ function IndexCalculator() {
                 />
               </label>
             </div>
-
             <label>
-              Yearly Contribution ($):{" "}
+              Yearly Contribution ($):
               <input
-                type="number"
+                type="text"
                 name="contribution2"
-                value={data.contribution2}
+                value={
+                  isFocused
+                    ? data.contribution2.toString()
+                    : "$" + data.contribution2.toLocaleString()
+                }
                 onChange={handleChange}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
               />
             </label>
           </div>
         </div>
-
         <div className={classes.resultsContainer}>
           {[table1, table2].map((table, idx) => (
             <table className={classes.tableContainer} key={idx}>
@@ -644,7 +643,6 @@ function IndexCalculator() {
                   <th>Balance (No Withdrawal)</th>
                 </tr>
               </thead>
-
               <tbody className={classes.stripedTable}>
                 {table.map((row, i) => (
                   <tr key={i}>
